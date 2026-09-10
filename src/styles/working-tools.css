@@ -1,0 +1,3605 @@
+
+/* =====================================================
+   DLTJ2.9
+   WORKING TOOL — UNIVERSAL DEVELOPMENT WORKSPACE
+   FILE: src/styles/working-tools.css
+   DATE: 2026-09-02
+   ===================================================== */
+
+/* =====================================================
+   ROOT
+   ===================================================== */
+
+.wt-vscode,
+.wt-full-run-page {
+  --wt-bg: #0f0f0f;
+  --wt-bg-2: #141414;
+  --wt-bg-3: #191919;
+  --wt-panel: #171717;
+
+  --wt-border: #292929;
+  --wt-border-light: #383838;
+
+  --wt-text: #dddddd;
+  --wt-text-soft: #999999;
+  --wt-text-dim: #666666;
+
+  --wt-yellow: #ffd400;
+  --wt-yellow-soft: #ffe66a;
+
+  --wt-rose: #ff3b6b;
+  --wt-rose-soft: #ff6f91;
+
+  --wt-green: #45d483;
+  --wt-red: #ff6258;
+  --wt-red-soft: #ff6258;
+
+  color: var(--wt-text);
+  background: var(--wt-bg);
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  box-sizing: border-box;
+}
+
+.wt-vscode *,
+.wt-full-run-page * {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   MAIN WORKSPACE
+   ===================================================== */
+
+.wt-vscode {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 212, 0, 0.025),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(255, 59, 107, 0.018),
+      transparent 30%
+    ),
+    var(--wt-bg);
+}
+
+/* =====================================================
+   TOP MENU
+   ===================================================== */
+
+.wt-top-menu {
+  height: 48px;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  background: #101010;
+
+  border-bottom:
+    1px solid var(--wt-border);
+
+  user-select: none;
+}
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.wt-brand {
+  width: 190px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  border-right:
+    1px solid var(--wt-border);
+
+  flex-shrink: 0;
+}
+
+.wt-brand-icon {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+
+  background: #202020;
+
+  color: var(--wt-yellow);
+
+  font-weight: 800;
+
+  box-shadow:
+    0 0 8px rgba(255, 212, 0, 0.2);
+
+  flex-shrink: 0;
+}
+
+.wt-brand strong {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TOP MENU ITEMS
+   ===================================================== */
+
+.wt-menu {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  min-width: 0;
+}
+
+.wt-menu button,
+.wt-top-run,
+.wt-top-right button {
+  border: 0;
+
+  background: transparent;
+
+  color: #bdbdbd;
+
+  font-size: 13px;
+
+  height: 100%;
+
+  padding: 0 13px;
+
+  cursor: pointer;
+}
+
+.wt-menu button:hover {
+  background: #202020;
+  color: white;
+}
+
+.wt-menu button:active {
+  background: #272727;
+}
+
+/* =====================================================
+   TOP RIGHT
+   ===================================================== */
+
+.wt-top-right {
+  margin-left: auto;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding-right: 10px;
+
+  min-width: 0;
+}
+
+.wt-top-right > span {
+  color: var(--wt-text-dim);
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   RUN BUTTON
+   ===================================================== */
+
+.wt-top-run {
+  height: 30px !important;
+
+  border: 1px solid
+    var(--wt-yellow) !important;
+
+  border-radius: 6px;
+
+  color: #fff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 212, 0, 0.15),
+      rgba(255, 59, 107, 0.15)
+    ) !important;
+
+  font-weight: 800;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+
+.wt-top-run::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 212, 0, 0.12),
+      transparent 45%,
+      rgba(255, 59, 107, 0.12)
+    );
+
+  pointer-events: none;
+}
+
+.wt-top-run:hover {
+  border-color:
+    var(--wt-rose) !important;
+
+  box-shadow:
+    0 0 7px
+      rgba(255, 212, 0, 0.55),
+    0 0 15px
+      rgba(255, 59, 107, 0.45),
+    0 0 28px
+      rgba(255, 59, 107, 0.18);
+
+  color: #ffffff !important;
+}
+
+.wt-top-run:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+.wt-body {
+  flex: 1;
+
+  min-height: 0;
+  min-width: 0;
+
+  display: flex;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   ACTIVITY BAR
+   ===================================================== */
+
+.wt-activity-bar {
+  width: 48px;
+  min-width: 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 7px;
+
+  background: #101010;
+
+  border-right:
+    1px solid var(--wt-border);
+
+  flex-shrink: 0;
+}
+
+.wt-activity-bar button {
+  width: 44px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-left:
+    2px solid transparent;
+
+  background: transparent;
+
+  color: #777;
+
+  cursor: pointer;
+
+  font-size: 19px;
+
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.wt-activity-bar button:hover {
+  color: #ddd;
+  background: #1b1b1b;
+}
+
+.wt-activity-bar button.active {
+  color: var(--wt-yellow);
+
+  border-left-color:
+    var(--wt-yellow);
+
+  background: #1a1800;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.wt-sidebar {
+  width: 280px;
+  min-width: 160px;
+  max-width: 520px;
+
+  position: relative;
+
+  background: var(--wt-panel);
+
+  border-right:
+    1px solid var(--wt-border);
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+.wt-sidebar::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: -4px;
+
+  width: 8px;
+  height: 100%;
+
+  cursor: col-resize;
+
+  z-index: 50;
+
+  background: transparent;
+}
+
+.wt-sidebar::after:hover {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 212, 0, 0.5),
+      transparent
+    );
+}
+
+/* =====================================================
+   EXPLORER
+   ===================================================== */
+
+.wt-explorer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.wt-explorer-heading {
+  height: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 10px 0 14px;
+
+  border-bottom:
+    1px solid var(--wt-border);
+
+  background: #161616;
+}
+
+.wt-explorer-heading strong {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #bcbcbc;
+}
+
+.wt-explorer-actions {
+  display: flex;
+
+  gap: 2px;
+}
+
+.wt-explorer-actions button {
+  width: 28px;
+  height: 27px;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  background: transparent;
+
+  color: #888;
+
+  cursor: pointer;
+}
+
+.wt-explorer-actions button:hover {
+  background: #292929;
+  color: white;
+}
+
+/* =====================================================
+   PROJECT HEADER
+   ===================================================== */
+
+.wt-project-heading {
+  height: 34px;
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 10px;
+
+  color: #c9c9c9;
+
+  font-size: 11px;
+
+  border-bottom:
+    1px solid #222;
+}
+
+.wt-project-heading span:first-child {
+  color: #777;
+}
+
+/* =====================================================
+   FILE TREE
+   ===================================================== */
+
+.wt-file-tree {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  padding: 5px 0;
+}
+
+.wt-file-tree::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.wt-file-tree::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.wt-file-tree::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+
+  border-radius: 2px;
+}
+
+.wt-file-tree::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* =====================================================
+   FOLDER
+   ===================================================== */
+
+.wt-tree-folder {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 12px;
+
+  color: #c9c9c9;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.wt-tree-folder:hover {
+  background: #202020;
+}
+
+.wt-tree-folder span:first-child {
+  color: #777;
+}
+
+/* =====================================================
+   FILE
+   ===================================================== */
+
+.wt-tree-file {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 12px 0 27px;
+
+  border: 0;
+
+  border-left:
+    2px solid transparent;
+
+  background: transparent;
+
+  color: #bdbdbd;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.wt-tree-file:hover {
+  background: #202020;
+
+  color: white;
+}
+
+.wt-tree-file.active {
+  background: #252525;
+
+  color: #ffffff;
+
+  border-left-color:
+    var(--wt-yellow);
+}
+
+.wt-tree-file span:nth-child(2) {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.wt-file-dot {
+  margin-left: auto;
+
+  color: var(--wt-yellow);
+
+  font-size: 8px;
+}
+
+/* =====================================================
+   TREE EMPTY
+   ===================================================== */
+
+.wt-tree-empty {
+  padding: 25px 15px;
+
+  color: #666;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+.wt-tree-empty button {
+  display: block;
+
+  margin: 12px auto 0;
+
+  padding: 7px 10px;
+
+  border:
+    1px solid #3b3b3b;
+
+  border-radius: 4px;
+
+  background: #202020;
+
+  color: #bbb;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   EDITOR AREA
+   ===================================================== */
+
+.wt-editor-area {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #111;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   TABS
+   ===================================================== */
+
+.wt-editor-tabs-row {
+  height: 39px;
+  min-height: 39px;
+
+  overflow: hidden;
+
+  background: #151515;
+
+  border-bottom:
+    1px solid var(--wt-border);
+}
+
+/* =====================================================
+   EDITOR TOOLBAR
+   ===================================================== */
+
+.wt-editor-toolbar {
+  height: 39px;
+  min-height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #141414;
+
+  border-bottom:
+    1px solid #252525;
+}
+
+.wt-breadcrumb {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  overflow: hidden;
+}
+
+.wt-breadcrumb strong {
+  color: #ccc;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.wt-editor-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+}
+
+.wt-editor-actions button {
+  height: 27px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #333;
+
+  border-radius: 4px;
+
+  background: #202020;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.wt-editor-actions button:hover {
+  background: #292929;
+
+  color: white;
+}
+
+/* =====================================================
+   EDITOR PRIMARY RUN
+   ===================================================== */
+
+.wt-editor-actions button.primary {
+  position: relative;
+
+  border:
+    1px solid var(--wt-yellow);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 212, 0, 0.16),
+      rgba(255, 59, 107, 0.16)
+    );
+
+  color: #ffffff;
+
+  font-weight: 800;
+
+  overflow: hidden;
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.wt-editor-actions button.primary::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 212, 0, 0.12),
+      transparent 45%,
+      rgba(255, 59, 107, 0.14)
+    );
+
+  pointer-events: none;
+}
+
+.wt-editor-actions button.primary:hover {
+  border-color:
+    var(--wt-rose);
+
+  box-shadow:
+    0 0 7px
+      rgba(255, 212, 0, 0.55),
+    0 0 15px
+      rgba(255, 59, 107, 0.45),
+    0 0 25px
+      rgba(255, 59, 107, 0.16);
+
+  color: #ffffff;
+}
+
+.wt-editor-actions button.primary:active {
+  transform: scale(0.96);
+}
+
+/* =====================================================
+   CODE AREA
+   ===================================================== */
+
+.wt-code-area {
+  flex: 1;
+
+  min-height: 0;
+  min-width: 0;
+
+  position: relative;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #0f0f0f;
+}
+
+.wt-code-area > * {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+}
+
+/* =====================================================
+   CODE EDITOR
+   ===================================================== */
+
+.wt-code-editor {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #0f0f0f;
+}
+
+/* =====================================================
+   CODE EDITOR TOOLBAR
+   ===================================================== */
+
+.wt-code-editor-toolbar {
+  height: 38px;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #151515;
+
+  border-bottom:
+    1px solid #292929;
+}
+
+.wt-code-editor-file {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ddd;
+
+  font-size: 12px;
+
+  overflow: hidden;
+}
+
+.wt-code-editor-file strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.wt-code-editor-file-icon {
+  flex-shrink: 0;
+
+  font-size: 14px;
+}
+
+.wt-code-editor-tools {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+.wt-code-editor-tools > span {
+  color: #777;
+
+  font-size: 10px;
+}
+
+.wt-code-editor-tools button {
+  height: 25px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #363636;
+
+  border-radius: 4px;
+
+  background: #202020;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.wt-code-editor-tools button:hover {
+  background: #292929;
+
+  color: white;
+}
+
+/* =====================================================
+   EDITOR BODY
+   ===================================================== */
+
+.wt-code-editor-body {
+  flex: 1;
+
+  min-height: 0;
+  min-width: 0;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #0b0b0b;
+}
+
+/* =====================================================
+   LINE NUMBERS
+   ===================================================== */
+
+.wt-code-line-numbers {
+  width: 54px;
+  min-width: 54px;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  padding-top: 12px;
+
+  background: #101010;
+
+  border-right:
+    1px solid #242424;
+
+  color: #555;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 22px;
+
+  text-align: right;
+
+  user-select: none;
+}
+
+.wt-code-line-numbers > div {
+  height: 22px;
+
+  padding-right: 12px;
+}
+
+.wt-code-line-numbers > div.active {
+  color: #b8b8b8;
+
+  background:
+    rgba(255, 212, 0, 0.025);
+}
+
+/* =====================================================
+   CODE INPUT WRAPPER
+   ===================================================== */
+
+.wt-code-input-wrapper {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #0b0b0b;
+}
+
+/* =====================================================
+   CODE TEXTAREA
+   ===================================================== */
+
+.wt-code-input {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+
+  padding: 12px 18px;
+
+  border: 0;
+
+  outline: none;
+
+  resize: none;
+
+  overflow: auto;
+
+  background: #0b0b0b;
+
+  color: #e0e0e0;
+
+  caret-color: var(--wt-yellow);
+
+  font-family:
+    Consolas,
+    "Cascadia Code",
+    "Courier New",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 22px;
+
+  letter-spacing: 0;
+
+  tab-size: 2;
+
+  white-space: pre;
+
+  word-wrap: normal;
+
+  overflow-wrap: normal;
+
+  text-align: left;
+
+  scrollbar-gutter: stable;
+}
+
+.wt-code-input::selection {
+  background:
+    rgba(255, 212, 0, 0.22);
+}
+
+.wt-code-input::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.wt-code-input::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+.wt-code-input::-webkit-scrollbar-thumb {
+  background: #363636;
+
+  border-radius: 2px;
+}
+
+.wt-code-input::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
+
+/* =====================================================
+   EMPTY EDITOR
+   ===================================================== */
+
+.wt-empty-editor {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #555;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   CODE STATUS BAR
+   ===================================================== */
+
+.wt-code-editor-status {
+  height: 25px;
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #181818;
+
+  border-top:
+    1px solid #292929;
+
+  color: #777;
+
+  font-size: 10px;
+
+  user-select: none;
+
+  overflow: hidden;
+}
+
+.wt-code-status-left,
+.wt-code-status-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 0;
+}
+
+.wt-code-status-left span,
+.wt-code-status-right span {
+  white-space: nowrap;
+}
+
+.wt-code-status-right span:last-child {
+  color: #555;
+}
+
+.wt-code-status-right span:nth-child(2) {
+  color: var(--wt-green);
+}
+
+/* =====================================================
+   BOTTOM PANEL
+   ===================================================== */
+
+.wt-bottom-panel {
+  height: 210px;
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #111;
+
+  border-top:
+    1px solid var(--wt-border);
+}
+
+.wt-bottom-panel-header {
+  height: 36px;
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+
+  background: #171717;
+
+  border-bottom:
+    1px solid #292929;
+}
+
+.wt-bottom-tabs {
+  height: 100%;
+
+  display: flex;
+
+  min-width: 0;
+
+  overflow-x: auto;
+}
+
+.wt-bottom-tabs button {
+  height: 100%;
+
+  padding: 0 13px;
+
+  border: 0;
+
+  border-bottom:
+    2px solid transparent;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.wt-bottom-tabs button:hover {
+  color: #bbb;
+}
+
+.wt-bottom-tabs button.active {
+  color: #eee;
+
+  border-bottom-color:
+    var(--wt-yellow);
+}
+
+.wt-bottom-tabs button span {
+  margin-left: 4px;
+
+  color: #666;
+}
+
+.wt-bottom-close {
+  margin-left: auto;
+
+  width: 38px;
+  height: 100%;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.wt-bottom-close:hover {
+  background: #242424;
+
+  color: white;
+}
+
+.wt-bottom-content {
+  flex: 1;
+
+  min-height: 0;
+
+  padding: 12px 15px;
+
+  overflow: auto;
+
+  color: #999;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 12px;
+}
+
+.wt-bottom-content pre {
+  margin: 0;
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+}
+
+/* =====================================================
+   CONSOLE PANEL
+   ===================================================== */
+
+.wt-console-panel {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #111;
+}
+
+.wt-panel-header {
+  height: 36px;
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #171717;
+
+  border-bottom:
+    1px solid #292929;
+}
+
+.wt-panel-header > div:first-child {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.wt-panel-header strong {
+  color: #bbb;
+
+  font-size: 11px;
+}
+
+.wt-panel-count {
+  min-width: 18px;
+
+  padding: 2px 5px;
+
+  border-radius: 3px;
+
+  background: #242424;
+
+  color: #777;
+
+  font-size: 9px;
+
+  text-align: center;
+}
+
+.wt-panel-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+.wt-panel-button {
+  height: 25px;
+
+  padding: 0 9px;
+
+  border:
+    1px solid #333;
+
+  border-radius: 4px;
+
+  background: #202020;
+
+  color: #888;
+
+  cursor: pointer;
+
+  font-size: 10px;
+}
+
+.wt-panel-button:hover {
+  background: #292929;
+
+  color: #ddd;
+}
+
+.wt-console-content {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  padding: 8px 12px;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 12px;
+}
+
+.wt-console-empty {
+  color: #555;
+
+  padding: 10px 2px;
+}
+
+.wt-console-line {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 4px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.025);
+}
+
+.wt-console-type {
+  width: 48px;
+
+  flex-shrink: 0;
+
+  color: #666;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.wt-console-message {
+  flex: 1;
+
+  color: #aaa;
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+}
+
+.wt-console-time {
+  color: #555;
+
+  font-size: 9px;
+
+  flex-shrink: 0;
+}
+
+.wt-console-info .wt-console-type {
+  color: var(--wt-yellow);
+}
+
+.wt-console-warning .wt-console-type {
+  color: #e7b800;
+}
+
+.wt-console-error .wt-console-type {
+  color: var(--wt-red);
+}
+
+.wt-console-log .wt-console-type {
+  color: #777;
+}
+
+/* =====================================================
+   PANEL BAR
+   ===================================================== */
+
+.wt-panel-bar {
+  height: 29px;
+  min-height: 29px;
+
+  display: flex;
+  align-items: center;
+
+  background: #141414;
+
+  border-top:
+    1px solid #242424;
+
+  overflow-x: auto;
+}
+
+.wt-panel-bar button {
+  height: 100%;
+
+  padding: 0 12px;
+
+  border: 0;
+
+  border-bottom:
+    2px solid transparent;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.wt-panel-bar button:hover {
+  color: #bbb;
+}
+
+.wt-panel-bar button.active {
+  color: #eee;
+
+  border-bottom-color:
+    var(--wt-yellow);
+}
+
+.wt-panel-bar button span {
+  margin-left: 4px;
+
+  color: #666;
+}
+
+/* =====================================================
+   STATUS BAR
+   ===================================================== */
+
+.wt-status-bar {
+  height: 25px;
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #181818;
+
+  border-top:
+    1px solid #292929;
+
+  color: #777;
+
+  font-size: 10px;
+
+  user-select: none;
+
+  overflow: hidden;
+}
+
+.wt-status-left,
+.wt-status-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 0;
+}
+
+.wt-status-left span,
+.wt-status-right span {
+  white-space: nowrap;
+}
+
+.wt-status-right span:last-child {
+  color: #555;
+}
+
+.wt-status-right span:nth-child(2) {
+  color: var(--wt-green);
+}
+
+/* =====================================================
+   SIDE VIEWS
+   ===================================================== */
+
+.wt-side-view {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.wt-side-title {
+  height: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  border-bottom:
+    1px solid var(--wt-border);
+
+  color: #aaa;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.wt-search-input {
+  margin: 12px;
+
+  height: 32px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #333;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #111;
+
+  color: #ddd;
+}
+
+.wt-search-input:focus {
+  border-color: #555;
+
+  box-shadow:
+    0 0 0 1px #222;
+}
+
+.wt-search-results {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+}
+
+.wt-search-results button {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 9px 12px;
+
+  border: 0;
+
+  border-bottom:
+    1px solid #222;
+
+  background: transparent;
+
+  color: #bbb;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.wt-search-results button:hover {
+  background: #202020;
+}
+
+.wt-search-results strong {
+  color: #ddd;
+}
+
+.wt-search-results span {
+  color: #666;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.wt-empty {
+  padding: 20px;
+
+  color: #555;
+
+  text-align: center;
+}
+
+/* =====================================================
+   SOURCE CONTROL
+   ===================================================== */
+
+.wt-source-empty {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  color: #666;
+
+  text-align: center;
+}
+
+.wt-source-empty > div {
+  font-size: 35px;
+}
+
+.wt-source-empty strong {
+  color: #aaa;
+}
+
+.wt-source-empty span {
+  font-size: 11px;
+}
+
+/* =====================================================
+   RUN SIDEBAR
+   ===================================================== */
+
+.wt-run-sidebar-button {
+  margin: 14px;
+
+  height: 38px;
+
+  border:
+    1px solid var(--wt-yellow);
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 212, 0, 0.14),
+      rgba(255, 59, 107, 0.14)
+    );
+
+  color: #fff;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.wt-run-sidebar-button:hover {
+  border-color:
+    var(--wt-rose);
+
+  box-shadow:
+    0 0 7px
+      rgba(255, 212, 0, 0.5),
+    0 0 15px
+      rgba(255, 59, 107, 0.4);
+}
+
+.wt-run-sidebar-button:active {
+  transform: scale(0.97);
+}
+
+.wt-run-info {
+  margin: 0 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  color: #666;
+
+  font-size: 11px;
+}
+
+.wt-run-info strong {
+  color: #bbb;
+}
+
+/* =====================================================
+   FULL RUN PAGE
+   ===================================================== */
+
+.wt-full-run-page {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #0e0e0e;
+
+  overflow: hidden;
+}
+
+.wt-run-topbar {
+  height: 48px;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  background: #151515;
+
+  border-bottom:
+    1px solid var(--wt-border);
+}
+
+.wt-run-title {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.wt-run-logo {
+  color: var(--wt-yellow);
+
+  font-size: 15px;
+}
+
+.wt-run-status {
+  padding: 3px 7px;
+
+  border-radius: 3px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+}
+
+.wt-run-status.running {
+  color: var(--wt-yellow);
+
+  background: #292300;
+}
+
+.wt-run-status.success {
+  color: var(--wt-green);
+
+  background: #10251a;
+}
+
+.wt-run-status.error {
+  color: var(--wt-red-soft);
+
+  background: #2b1210;
+}
+
+.wt-run-actions {
+  display: flex;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+.wt-run-actions button {
+  height: 30px;
+
+  padding: 0 11px;
+
+  border:
+    1px solid #333;
+
+  border-radius: 4px;
+
+  background: #202020;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.wt-run-actions button:hover {
+  color: white;
+
+  background: #292929;
+}
+
+/* =====================================================
+   FULL RUN PRIMARY BUTTON
+   ===================================================== */
+
+.wt-run-actions button.primary,
+.wt-full-run-page button.run-primary {
+  border-color:
+    var(--wt-yellow);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 212, 0, 0.15),
+      rgba(255, 59, 107, 0.15)
+    );
+
+  color: #fff;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 0 6px
+      rgba(255, 212, 0, 0.25),
+    0 0 10px
+      rgba(255, 59, 107, 0.18);
+}
+
+.wt-run-actions button.primary:hover,
+.wt-full-run-page button.run-primary:hover {
+  border-color:
+    var(--wt-rose);
+
+  box-shadow:
+    0 0 8px
+      rgba(255, 212, 0, 0.55),
+    0 0 17px
+      rgba(255, 59, 107, 0.45);
+}
+
+/* =====================================================
+   RUN CONTENT
+   ===================================================== */
+
+.wt-run-content {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #0b0b0b;
+}
+
+.wt-preview-frame {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+
+  background: white;
+}
+
+.wt-language-output {
+  width: 100%;
+  height: 100%;
+
+  overflow: auto;
+
+  padding: 40px;
+
+  background: #101010;
+
+  color: #bbb;
+}
+
+.wt-language-output-icon {
+  margin-bottom: 15px;
+
+  color: var(--wt-yellow);
+
+  font-size: 28px;
+}
+
+.wt-language-output h2 {
+  margin: 0 0 10px;
+
+  color: #ddd;
+
+  font-size: 20px;
+}
+
+.wt-language-output p {
+  color: #777;
+}
+
+.wt-language-output pre {
+  margin-top: 25px;
+
+  padding: 15px;
+
+  overflow: auto;
+
+  border:
+    1px solid #292929;
+
+  background: #0b0b0b;
+
+  color: #aaa;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+/* =====================================================
+   RUN FOOTER
+   ===================================================== */
+
+.wt-run-footer {
+  height: 25px;
+  min-height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  background: #181818;
+
+  border-top:
+    1px solid #292929;
+
+  color: #777;
+
+  font-size: 10px;
+
+  overflow: hidden;
+}
+
+.wt-run-footer span {
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =====================================================
+   GLOBAL SCROLLBARS
+   ===================================================== */
+
+.wt-vscode ::-webkit-scrollbar,
+.wt-full-run-page ::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.wt-vscode ::-webkit-scrollbar-track,
+.wt-full-run-page ::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+.wt-vscode ::-webkit-scrollbar-thumb,
+.wt-full-run-page ::-webkit-scrollbar-thumb {
+  background: #353535;
+
+  border-radius: 2px;
+}
+
+.wt-vscode ::-webkit-scrollbar-thumb:hover,
+.wt-full-run-page ::-webkit-scrollbar-thumb:hover {
+  background: #4b4b4b;
+}
+
+/* =====================================================
+   BUTTON RESET
+   ===================================================== */
+
+.wt-vscode button,
+.wt-full-run-page button {
+  font-family: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   INPUT RESET
+   ===================================================== */
+
+.wt-vscode textarea,
+.wt-vscode input {
+  font-family:
+    Consolas,
+    "Cascadia Code",
+    "Courier New",
+    monospace;
+}
+
+/* =====================================================
+   TABLET
+   901px → 1200px
+   ===================================================== */
+
+@media (max-width: 1200px) {
+  .wt-sidebar {
+    width: 240px;
+  }
+
+  .wt-brand {
+    width: 165px;
+  }
+
+  .wt-menu button {
+    padding: 0 10px;
+  }
+
+  .wt-top-right > span {
+    display: none;
+  }
+
+  .wt-editor-actions button {
+    padding: 0 8px;
+  }
+}
+
+/* =====================================================
+   SMALL TABLET
+   701px → 900px
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .wt-sidebar {
+    width: 220px;
+  }
+
+  .wt-brand {
+    width: 150px;
+  }
+
+  .wt-menu button {
+    padding: 0 8px;
+  }
+
+  .wt-status-left,
+  .wt-status-right {
+    gap: 8px;
+  }
+
+  .wt-code-line-numbers {
+    width: 48px;
+    min-width: 48px;
+  }
+
+  .wt-code-line-numbers > div {
+    padding-right: 9px;
+  }
+
+  .wt-code-input {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   700px AND BELOW
+
+   MOBILE DESIGN:
+   - No desktop vertical activity sidebar
+   - Compact horizontal controls
+   - File/Create area compact
+   - Editor gets maximum space
+   - Bottom panel remains usable
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  /* ===================================================
+     MOBILE TOP BAR
+     =================================================== */
+
+  .wt-top-menu {
+    height: 46px;
+    min-height: 46px;
+
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  .wt-brand {
+    width: auto;
+    min-width: 0;
+
+    padding: 0 8px;
+
+    gap: 6px;
+
+    border-right: 0;
+  }
+
+  .wt-brand strong {
+    font-size: 12px;
+
+    letter-spacing: 0.3px;
+  }
+
+  .wt-brand-icon {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+  }
+
+  /* Hide desktop menu on phone */
+  .wt-menu {
+    display: none;
+  }
+
+  .wt-top-right {
+    gap: 5px;
+
+    padding-right: 6px;
+  }
+
+  .wt-top-right > span {
+    display: none;
+  }
+
+  .wt-top-right button {
+    height: 30px;
+
+    padding: 0 8px;
+
+    font-size: 10px;
+  }
+
+  .wt-top-run {
+    height: 29px !important;
+
+    padding: 0 10px !important;
+
+    font-size: 10px;
+  }
+
+  /* ===================================================
+     MOBILE BODY
+     =================================================== */
+
+  .wt-body {
+    flex-direction: column;
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /* ===================================================
+     MOBILE ACTIVITY BAR
+     
+     Converted from desktop left sidebar into
+     compact horizontal control strip.
+     =================================================== */
+
+  .wt-activity-bar {
+    order: 0;
+
+    width: 100%;
+    min-width: 100%;
+
+    height: 40px;
+    min-height: 40px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 0 5px;
+
+    background: #101010;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid var(--wt-border);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+
+    flex-shrink: 0;
+  }
+
+  .wt-activity-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wt-activity-bar button {
+    width: 42px;
+    min-width: 42px;
+
+    height: 37px;
+
+    border-left: 0;
+
+    border-bottom:
+      2px solid transparent;
+
+    font-size: 16px;
+
+    touch-action: manipulation;
+  }
+
+  .wt-activity-bar button.active {
+    border-left-color: transparent;
+
+    border-bottom-color:
+      var(--wt-yellow);
+
+    background: #1a1800;
+  }
+
+  /* ===================================================
+     MOBILE SIDEBAR
+
+     Compact file area instead of desktop sidebar.
+     =================================================== */
+
+  .wt-sidebar {
+    order: 1;
+
+    width: 100%;
+    min-width: 100%;
+    max-width: none;
+
+    height: 120px;
+    min-height: 120px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid var(--wt-border);
+
+    flex-shrink: 0;
+  }
+
+  .wt-sidebar::after {
+    display: none;
+  }
+
+  .wt-explorer-heading {
+    height: 34px;
+    min-height: 34px;
+
+    padding: 0 8px;
+  }
+
+  .wt-explorer-heading strong {
+    font-size: 10px;
+  }
+
+  .wt-explorer-actions {
+    gap: 3px;
+  }
+
+  .wt-explorer-actions button {
+    width: 30px;
+    height: 28px;
+
+    touch-action: manipulation;
+  }
+
+  .wt-project-heading {
+    height: 27px;
+    min-height: 27px;
+
+    padding: 0 8px;
+
+    font-size: 10px;
+  }
+
+  .wt-file-tree {
+    padding: 2px 0;
+
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .wt-tree-folder,
+  .wt-tree-file {
+    height: 26px;
+
+    font-size: 11px;
+  }
+
+  .wt-tree-folder {
+    padding-left: 9px;
+  }
+
+  .wt-tree-file {
+    padding-left: 22px;
+  }
+
+  /* ===================================================
+     MOBILE EDITOR
+     =================================================== */
+
+  .wt-editor-area {
+    order: 2;
+
+    flex: 1;
+
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /* ===================================================
+     MOBILE TABS
+     =================================================== */
+
+  .wt-editor-tabs-row {
+    height: 34px;
+    min-height: 34px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+  }
+
+  .wt-editor-tabs-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ===================================================
+     MOBILE EDITOR TOOLBAR
+     =================================================== */
+
+  .wt-editor-toolbar {
+    height: 37px;
+    min-height: 37px;
+
+    padding: 0 6px;
+
+    gap: 5px;
+  }
+
+  .wt-breadcrumb {
+    min-width: 0;
+
+    gap: 4px;
+
+    font-size: 9px;
+  }
+
+  .wt-editor-actions {
+    gap: 3px;
+
+    flex-shrink: 0;
+  }
+
+  .wt-editor-actions button {
+    height: 27px;
+
+    min-width: 38px;
+
+    padding: 0 6px;
+
+    font-size: 9px;
+
+    touch-action: manipulation;
+  }
+
+  /* Keep primary Run visible */
+  .wt-editor-actions button.primary {
+    min-width: 48px;
+
+    padding: 0 8px;
+  }
+
+  /* ===================================================
+     MOBILE CODE EDITOR
+     =================================================== */
+
+  .wt-code-editor-toolbar {
+    height: 33px;
+    min-height: 33px;
+
+    padding: 0 6px;
+
+    gap: 5px;
+  }
+
+  .wt-code-editor-file {
+    gap: 5px;
+
+    font-size: 10px;
+  }
+
+  .wt-code-editor-file-icon {
+    font-size: 12px;
+  }
+
+  .wt-code-editor-tools {
+    gap: 3px;
+  }
+
+  .wt-code-editor-tools > span {
+    display: none;
+  }
+
+  .wt-code-editor-tools button {
+    height: 24px;
+
+    min-width: 38px;
+
+    padding: 0 6px;
+
+    font-size: 9px;
+
+    touch-action: manipulation;
+  }
+
+  /* ===================================================
+     MOBILE CODE BODY
+     =================================================== */
+
+  .wt-code-line-numbers {
+    width: 34px;
+    min-width: 34px;
+
+    padding-top: 9px;
+
+    font-size: 10px;
+
+    line-height: 19px;
+  }
+
+  .wt-code-line-numbers > div {
+    height: 19px;
+
+    padding-right: 6px;
+  }
+
+  .wt-code-input {
+    padding: 9px 9px;
+
+    font-size: 12px;
+
+    line-height: 19px;
+
+    tab-size: 2;
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x pan-y;
+  }
+
+  /* ===================================================
+     MOBILE CODE STATUS
+     =================================================== */
+
+  .wt-code-editor-status {
+    height: 22px;
+    min-height: 22px;
+
+    padding: 0 6px;
+
+    font-size: 8px;
+  }
+
+  .wt-code-status-left,
+  .wt-code-status-right {
+    gap: 6px;
+  }
+
+  .wt-code-status-left span:nth-child(n + 3),
+  .wt-code-status-right span:nth-child(n + 3) {
+    display: none;
+  }
+
+  /* ===================================================
+     MOBILE BOTTOM PANEL
+     =================================================== */
+
+  .wt-bottom-panel {
+    height: 150px;
+    min-height: 90px;
+
+    flex-shrink: 0;
+  }
+
+  .wt-bottom-panel-header {
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .wt-bottom-tabs {
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .wt-bottom-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wt-bottom-tabs button {
+    padding: 0 9px;
+
+    font-size: 9px;
+
+    touch-action: manipulation;
+  }
+
+  .wt-bottom-content {
+    padding: 8px 9px;
+
+    font-size: 10px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wt-bottom-close {
+    width: 34px;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+  }
+
+  /* ===================================================
+     MOBILE PANEL
+     =================================================== */
+
+  .wt-panel-header {
+    height: 32px;
+    min-height: 32px;
+
+    padding: 0 7px;
+  }
+
+  .wt-panel-header strong {
+    font-size: 10px;
+  }
+
+  .wt-console-content {
+    padding: 7px 8px;
+
+    font-size: 10px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wt-console-line {
+    gap: 6px;
+
+    padding: 3px 0;
+  }
+
+  .wt-console-type {
+    width: 38px;
+
+    font-size: 8px;
+  }
+
+  .wt-console-time {
+    display: none;
+  }
+
+  .wt-panel-button {
+    height: 23px;
+
+    padding: 0 6px;
+
+    font-size: 8px;
+  }
+
+  /* ===================================================
+     MOBILE PANEL BAR
+     =================================================== */
+
+  .wt-panel-bar {
+    height: 29px;
+    min-height: 29px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .wt-panel-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wt-panel-bar button {
+    min-width: 60px;
+
+    padding: 0 8px;
+
+    font-size: 9px;
+
+    touch-action: manipulation;
+  }
+
+  /* ===================================================
+     MOBILE STATUS
+     =================================================== */
+
+  .wt-status-bar {
+    height: 22px;
+    min-height: 22px;
+
+    padding: 0 6px;
+
+    font-size: 8px;
+  }
+
+  .wt-status-left,
+  .wt-status-right {
+    gap: 6px;
+  }
+
+  .wt-status-left span:nth-child(n + 3),
+  .wt-status-right span:nth-child(n + 3) {
+    display: none;
+  }
+
+  /* ===================================================
+     MOBILE SEARCH
+     =================================================== */
+
+  .wt-side-title {
+    height: 34px;
+    min-height: 34px;
+
+    padding: 0 9px;
+
+    font-size: 9px;
+  }
+
+  .wt-search-input {
+    margin: 7px;
+
+    width: calc(100% - 14px);
+
+    height: 31px;
+
+    font-size: 11px;
+  }
+
+  .wt-search-results button {
+    padding: 7px 8px;
+
+    font-size: 10px;
+  }
+
+  /* ===================================================
+     MOBILE SOURCE
+     =================================================== */
+
+  .wt-source-empty {
+    padding: 10px;
+
+    gap: 6px;
+  }
+
+  .wt-source-empty > div {
+    font-size: 25px;
+  }
+
+  .wt-source-empty span {
+    font-size: 9px;
+  }
+
+  /* ===================================================
+     MOBILE RUN SIDEBAR
+     =================================================== */
+
+  .wt-run-sidebar-button {
+    margin: 8px;
+
+    height: 35px;
+
+    touch-action: manipulation;
+  }
+
+  .wt-run-info {
+    margin: 0 8px;
+
+    font-size: 9px;
+  }
+
+  /* ===================================================
+     FULL RUN PAGE MOBILE
+     =================================================== */
+
+  .wt-run-topbar {
+    height: 44px;
+    min-height: 44px;
+
+    padding: 0 7px;
+  }
+
+  .wt-run-title {
+    gap: 6px;
+
+    min-width: 0;
+  }
+
+  .wt-run-logo {
+    font-size: 13px;
+  }
+
+  .wt-run-status {
+    padding: 3px 5px;
+
+    font-size: 8px;
+  }
+
+  .wt-run-actions {
+    gap: 4px;
+  }
+
+  .wt-run-actions button {
+    height: 27px;
+
+    padding: 0 7px;
+
+    font-size: 9px;
+
+    touch-action: manipulation;
+  }
+
+  .wt-language-output {
+    padding: 20px 12px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wt-language-output h2 {
+    font-size: 16px;
+  }
+
+  .wt-language-output p {
+    font-size: 11px;
+  }
+
+  .wt-language-output pre {
+    margin-top: 18px;
+
+    padding: 10px;
+
+    font-size: 10px;
+  }
+
+  .wt-run-footer {
+    height: 22px;
+    min-height: 22px;
+
+    padding: 0 6px;
+
+    font-size: 8px;
+  }
+}
+
+/* =====================================================
+   SMALL PHONE
+   480px AND BELOW
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .wt-top-menu {
+    height: 43px;
+    min-height: 43px;
+  }
+
+  .wt-brand {
+    padding: 0 6px;
+
+    gap: 5px;
+  }
+
+  .wt-brand-icon {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+  }
+
+  .wt-brand strong {
+    font-size: 10px;
+  }
+
+  .wt-top-right {
+    gap: 3px;
+
+    padding-right: 5px;
+  }
+
+  .wt-top-right button {
+    padding: 0 6px;
+
+    font-size: 9px;
+  }
+
+  .wt-top-run {
+    height: 27px !important;
+
+    padding: 0 8px !important;
+
+    font-size: 9px;
+  }
+
+  /* Activity strip */
+  .wt-activity-bar {
+    height: 37px;
+    min-height: 37px;
+
+    padding: 0 3px;
+  }
+
+  .wt-activity-bar button {
+    width: 38px;
+    min-width: 38px;
+
+    height: 35px;
+
+    font-size: 14px;
+  }
+
+  /* File area */
+  .wt-sidebar {
+    height: 108px;
+    min-height: 108px;
+  }
+
+  .wt-explorer-heading {
+    height: 30px;
+    min-height: 30px;
+
+    padding: 0 6px;
+  }
+
+  .wt-explorer-heading strong {
+    font-size: 9px;
+  }
+
+  .wt-explorer-actions button {
+    width: 26px;
+    height: 24px;
+  }
+
+  .wt-project-heading {
+    height: 24px;
+    min-height: 24px;
+
+    padding: 0 6px;
+
+    font-size: 9px;
+  }
+
+  .wt-tree-folder,
+  .wt-tree-file {
+    height: 23px;
+
+    font-size: 10px;
+  }
+
+  .wt-tree-file {
+    padding-left: 20px;
+  }
+
+  /* Tabs */
+  .wt-editor-tabs-row {
+    height: 31px;
+    min-height: 31px;
+  }
+
+  /* Editor toolbar */
+  .wt-editor-toolbar {
+    height: 33px;
+    min-height: 33px;
+
+    padding: 0 4px;
+
+    gap: 3px;
+  }
+
+  .wt-breadcrumb {
+    font-size: 8px;
+
+    gap: 3px;
+  }
+
+  .wt-editor-actions {
+    gap: 2px;
+  }
+
+  .wt-editor-actions button {
+    height: 23px;
+
+    min-width: 34px;
+
+    padding: 0 4px;
+
+    font-size: 8px;
+  }
+
+  .wt-editor-actions button.primary {
+    min-width: 43px;
+
+    padding: 0 6px;
+  }
+
+  /* Code toolbar */
+  .wt-code-editor-toolbar {
+    height: 30px;
+    min-height: 30px;
+
+    padding: 0 4px;
+  }
+
+  .wt-code-editor-file {
+    font-size: 9px;
+  }
+
+  .wt-code-editor-tools button {
+    height: 21px;
+
+    min-width: 34px;
+
+    padding: 0 5px;
+
+    font-size: 8px;
+  }
+
+  /* Code */
+  .wt-code-line-numbers {
+    width: 30px;
+    min-width: 30px;
+
+    padding-top: 7px;
+
+    font-size: 9px;
+
+    line-height: 18px;
+  }
+
+  .wt-code-line-numbers > div {
+    height: 18px;
+
+    padding-right: 4px;
+  }
+
+  .wt-code-input {
+    padding: 7px;
+
+    font-size: 11px;
+
+    line-height: 18px;
+  }
+
+  .wt-code-editor-status {
+    height: 20px;
+    min-height: 20px;
+
+    padding: 0 4px;
+
+    font-size: 7px;
+  }
+
+  .wt-code-status-left,
+  .wt-code-status-right {
+    gap: 4px;
+  }
+
+  /* Bottom panel */
+  .wt-bottom-panel {
+    height: 125px;
+    min-height: 80px;
+  }
+
+  .wt-bottom-panel-header {
+    height: 28px;
+    min-height: 28px;
+  }
+
+  .wt-bottom-tabs button {
+    padding: 0 7px;
+
+    font-size: 8px;
+  }
+
+  .wt-bottom-content {
+    padding: 6px;
+
+    font-size: 9px;
+  }
+
+  /* Panel bar */
+  .wt-panel-bar {
+    height: 26px;
+    min-height: 26px;
+  }
+
+  .wt-panel-bar button {
+    min-width: 54px;
+
+    padding: 0 6px;
+
+    font-size: 8px;
+  }
+
+  /* Status */
+  .wt-status-bar {
+    height: 20px;
+    min-height: 20px;
+
+    padding: 0 4px;
+
+    font-size: 7px;
+  }
+
+  .wt-status-left,
+  .wt-status-right {
+    gap: 4px;
+  }
+
+  /* Run page */
+  .wt-run-topbar {
+    height: 41px;
+    min-height: 41px;
+
+    padding: 0 5px;
+  }
+
+  .wt-run-logo {
+    font-size: 12px;
+  }
+
+  .wt-run-actions {
+    gap: 3px;
+  }
+
+  .wt-run-actions button {
+    height: 25px;
+
+    padding: 0 5px;
+
+    font-size: 8px;
+  }
+
+  .wt-language-output {
+    padding: 14px 9px;
+  }
+
+  .wt-language-output-icon {
+    font-size: 21px;
+  }
+
+  .wt-language-output h2 {
+    font-size: 14px;
+  }
+
+  .wt-language-output p {
+    font-size: 10px;
+  }
+
+  .wt-language-output pre {
+    margin-top: 13px;
+
+    padding: 7px;
+
+    font-size: 9px;
+  }
+
+  .wt-run-footer {
+    height: 20px;
+    min-height: 20px;
+
+    padding: 0 4px;
+
+    font-size: 7px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL PHONE
+   360px AND BELOW
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+  .wt-brand strong {
+    display: none;
+  }
+
+  .wt-brand {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .wt-top-right button {
+    padding: 0 5px;
+  }
+
+  .wt-top-run {
+    padding: 0 6px !important;
+  }
+
+  .wt-activity-bar {
+    height: 35px;
+    min-height: 35px;
+  }
+
+  .wt-activity-bar button {
+    width: 36px;
+    min-width: 36px;
+
+    height: 33px;
+
+    font-size: 13px;
+  }
+
+  .wt-sidebar {
+    height: 96px;
+    min-height: 96px;
+  }
+
+  .wt-explorer-heading {
+    height: 27px;
+    min-height: 27px;
+  }
+
+  .wt-explorer-actions button {
+    width: 24px;
+    height: 22px;
+  }
+
+  .wt-project-heading {
+    height: 22px;
+    min-height: 22px;
+  }
+
+  .wt-tree-folder,
+  .wt-tree-file {
+    height: 21px;
+
+    font-size: 9px;
+  }
+
+  .wt-tree-file {
+    padding-left: 18px;
+  }
+
+  .wt-editor-tabs-row {
+    height: 29px;
+    min-height: 29px;
+  }
+
+  .wt-editor-toolbar {
+    height: 31px;
+    min-height: 31px;
+  }
+
+  .wt-editor-actions button:not(.primary) {
+    display: none;
+  }
+
+  .wt-editor-actions button.primary {
+    min-width: 42px;
+  }
+
+  .wt-code-editor-toolbar {
+    height: 28px;
+    min-height: 28px;
+  }
+
+  .wt-code-editor-file {
+    font-size: 8px;
+  }
+
+  .wt-code-editor-tools button {
+    padding: 0 4px;
+
+    min-width: 31px;
+
+    font-size: 7px;
+  }
+
+  .wt-code-line-numbers {
+    width: 27px;
+    min-width: 27px;
+
+    font-size: 8px;
+  }
+
+  .wt-code-line-numbers > div {
+    padding-right: 3px;
+  }
+
+  .wt-code-input {
+    padding-left: 6px;
+    padding-right: 6px;
+
+    font-size: 10px;
+  }
+
+  .wt-bottom-panel {
+    height: 112px;
+    min-height: 70px;
+  }
+
+  .wt-bottom-panel-header {
+    height: 26px;
+    min-height: 26px;
+  }
+
+  .wt-bottom-tabs button {
+    padding: 0 6px;
+
+    font-size: 7px;
+  }
+
+  .wt-bottom-content {
+    padding: 5px;
+
+    font-size: 8px;
+  }
+
+  .wt-panel-bar {
+    height: 24px;
+    min-height: 24px;
+  }
+
+  .wt-panel-bar button {
+    min-width: 48px;
+
+    padding: 0 5px;
+
+    font-size: 7px;
+  }
+
+  .wt-status-bar {
+    height: 19px;
+    min-height: 19px;
+
+    font-size: 7px;
+  }
+
+  .wt-status-right {
+    display: none;
+  }
+}
+
+/* =====================================================
+   TOUCH DEVICE IMPROVEMENTS
+   ===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .wt-vscode button,
+  .wt-full-run-page button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .wt-activity-bar button,
+  .wt-tree-file,
+  .wt-menu button,
+  .wt-editor-actions button,
+  .wt-code-editor-tools button,
+  .wt-bottom-tabs button,
+  .wt-panel-bar button,
+  .wt-run-actions button,
+  .wt-explorer-actions button {
+    touch-action: manipulation;
+  }
+
+  .wt-code-input {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wt-file-tree,
+  .wt-search-results,
+  .wt-console-content,
+  .wt-bottom-content,
+  .wt-language-output {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* =====================================================
+   LANDSCAPE PHONE
+   ===================================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .wt-top-menu {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .wt-activity-bar {
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .wt-activity-bar button {
+    height: 31px;
+  }
+
+  .wt-sidebar {
+    height: 82px;
+    min-height: 82px;
+  }
+
+  .wt-explorer-heading {
+    height: 25px;
+    min-height: 25px;
+  }
+
+  .wt-project-heading {
+    height: 20px;
+    min-height: 20px;
+  }
+
+  .wt-tree-folder,
+  .wt-tree-file {
+    height: 20px;
+  }
+
+  .wt-editor-tabs-row {
+    height: 29px;
+    min-height: 29px;
+  }
+
+  .wt-editor-toolbar {
+    height: 31px;
+    min-height: 31px;
+  }
+
+  .wt-code-editor-toolbar {
+    height: 28px;
+    min-height: 28px;
+  }
+
+  .wt-bottom-panel {
+    height: 100px;
+    min-height: 65px;
+  }
+
+  .wt-status-bar {
+    height: 20px;
+    min-height: 20px;
+  }
+}
+
+/* =====================================================
+   SAFE MOBILE HEIGHT
+   ===================================================== */
+
+@media (max-height: 600px) and (max-width: 700px) {
+
+  .wt-top-menu {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .wt-activity-bar {
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .wt-sidebar {
+    height: 82px;
+    min-height: 82px;
+  }
+
+  .wt-bottom-panel {
+    height: 95px;
+    min-height: 60px;
+  }
+
+  .wt-code-editor-toolbar {
+    height: 28px;
+    min-height: 28px;
+  }
+
+  .wt-code-editor-status {
+    height: 19px;
+    min-height: 19px;
+  }
+
+  .wt-status-bar {
+    height: 19px;
+    min-height: 19px;
+  }
+}
+
+/* =====================================================
+   MOBILE SAFE AREA
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .wt-top-menu {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .wt-status-bar,
+  .wt-run-footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+

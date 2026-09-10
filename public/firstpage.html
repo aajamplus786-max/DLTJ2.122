@@ -1,0 +1,3181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Dev Learn Journey</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#01020a;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    color:white;
+}
+
+
+/* =========================================================
+   SPACE
+========================================================= */
+
+.space{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(71,77,165,.30),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 12% 15%,
+            rgba(255,205,75,.11),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 22%,
+            rgba(255,65,145,.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 55% 90%,
+            rgba(60,120,255,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #01020a 0%,
+            #07091b 48%,
+            #02030b 100%
+        );
+}
+
+
+/* =========================================================
+   AURORA
+========================================================= */
+
+.aurora{
+    position:absolute;
+    width:150%;
+    height:80%;
+
+    left:-25%;
+    top:5%;
+
+    pointer-events:none;
+
+    filter:blur(55px);
+    opacity:.7;
+
+    transform:rotate(-10deg);
+
+    background:
+        radial-gradient(
+            ellipse at 25% 50%,
+            rgba(85,120,255,.23),
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 52% 45%,
+            rgba(180,90,255,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 75% 50%,
+            rgba(255,75,150,.19),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 52% 75%,
+            rgba(255,210,80,.12),
+            transparent 25%
+        );
+
+    animation:
+        auroraMove
+        14s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes auroraMove{
+
+    0%{
+        transform:
+            translateX(-4%)
+            translateY(2%)
+            rotate(-10deg)
+            scale(1);
+    }
+
+    50%{
+        transform:
+            translateX(3%)
+            translateY(-2%)
+            rotate(-6deg)
+            scale(1.07);
+    }
+
+    100%{
+        transform:
+            translateX(7%)
+            translateY(3%)
+            rotate(-12deg)
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   AURORA SECOND WAVE
+========================================================= */
+
+.aurora::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 15%,
+            rgba(105,150,255,.10) 32%,
+            rgba(255,90,180,.12) 50%,
+            rgba(255,220,100,.08) 68%,
+            transparent 85%
+        );
+
+    filter:blur(25px);
+
+    animation:
+        waveMove
+        9s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes waveMove{
+
+    from{
+        transform:translateX(-8%);
+        opacity:.4;
+    }
+
+    to{
+        transform:translateX(8%);
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   LIGHT BLOBS
+========================================================= */
+
+.light{
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    pointer-events:none;
+}
+
+.light.yellow{
+    left:-140px;
+    top:-150px;
+
+    background:
+        rgba(255,210,70,.10);
+}
+
+.light.rose{
+    right:-150px;
+    top:30px;
+
+    background:
+        rgba(255,65,145,.10);
+}
+
+.light.blue{
+    left:35%;
+    bottom:-220px;
+
+    background:
+        rgba(70,120,255,.08);
+}
+
+
+/* =========================================================
+   DIGITAL GRID
+========================================================= */
+
+.digital-grid{
+    position:absolute;
+    inset:0;
+
+    opacity:.11;
+
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(100,140,255,.25) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(100,140,255,.25) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        48px 48px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 75%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   SCAN
+========================================================= */
+
+.scan{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    opacity:.3;
+
+    animation:
+        scanMove
+        8s
+        linear
+        infinite;
+}
+
+@keyframes scanMove{
+
+    from{
+        top:-5%;
+    }
+
+    to{
+        top:105%;
+    }
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 0 5px #ffffff,
+        0 0 11px rgba(150,190,255,.95);
+
+    animation:
+        starTwinkle
+        var(--time)
+        ease-in-out
+        infinite;
+}
+
+.star.big{
+    width:3px;
+    height:3px;
+
+    box-shadow:
+        0 0 7px #ffffff,
+        0 0 15px rgba(110,170,255,1),
+        0 0 25px rgba(255,255,255,.7);
+}
+
+@keyframes starTwinkle{
+
+    0%{
+        opacity:.05;
+        transform:scale(.45);
+    }
+
+    20%{
+        opacity:1;
+        transform:scale(1.35);
+    }
+
+    40%{
+        opacity:.3;
+        transform:scale(.75);
+    }
+
+    65%{
+        opacity:1;
+        transform:scale(1.15);
+    }
+
+    100%{
+        opacity:.05;
+        transform:scale(.5);
+    }
+}
+
+
+/* =========================================================
+   SHOOTING STARS
+========================================================= */
+
+.shooting{
+    position:absolute;
+
+    width:160px;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            transparent
+        );
+
+    transform:rotate(-28deg);
+
+    opacity:0;
+
+    animation:
+        shootingStar
+        7s
+        linear
+        infinite;
+}
+
+.shooting.one{
+    left:75%;
+    top:16%;
+}
+
+.shooting.two{
+    left:22%;
+    top:28%;
+    animation-delay:2.8s;
+}
+
+.shooting.three{
+    left:52%;
+    top:8%;
+    animation-delay:5s;
+}
+
+@keyframes shootingStar{
+
+    0%{
+        opacity:0;
+        transform:
+            translate(0,0)
+            rotate(-28deg)
+            scaleX(.2);
+    }
+
+    8%{
+        opacity:1;
+    }
+
+    22%{
+        opacity:0;
+
+        transform:
+            translate(-280px,145px)
+            rotate(-28deg)
+            scaleX(1);
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.topbar{
+    flex:0 0 56px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:
+        0 30px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(2,4,15,.38);
+
+    backdrop-filter:blur(8px);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:13px;
+    font-weight:900;
+
+    letter-spacing:1.7px;
+}
+
+.brand-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#ffe27b;
+
+    box-shadow:
+        0 0 8px #ffe27b,
+        0 0 18px rgba(255,215,80,.9);
+
+    animation:
+        brandPulse
+        1.5s
+        infinite;
+}
+
+@keyframes brandPulse{
+
+    0%,
+    100%{
+        opacity:.45;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   LOGIN BOX BUTTON
+========================================================= */
+
+.login-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:125px;
+    height:39px;
+
+    padding:0 20px;
+
+    border-radius:9px;
+
+    border:
+        1px solid
+        rgba(255,218,105,.75);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,215,90,.17),
+            rgba(255,75,150,.08)
+        );
+
+    box-shadow:
+        inset 0 0 12px
+        rgba(255,255,255,.04),
+        0 0 18px
+        rgba(255,210,80,.10);
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1.8px;
+
+    transition:.25s ease;
+}
+
+.login-box:hover{
+    transform:
+        translateY(-2px)
+        scale(1.02);
+
+    border-color:#ffe47e;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,215,90,.30),
+            rgba(255,75,150,.15)
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255,210,80,.24),
+        0 0 45px
+        rgba(255,75,150,.10);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+    flex:1;
+    min-height:0;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(280px,1.08fr)
+        minmax(250px,.75fr)
+        minmax(320px,1.15fr);
+
+    gap:18px;
+
+    padding:
+        17px 30px 6px;
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.left{
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.label{
+    color:#ffe071;
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:2.8px;
+
+    margin-bottom:12px;
+}
+
+.left h1{
+    font-size:
+        clamp(
+            29px,
+            3.15vw,
+            48px
+        );
+
+    line-height:1.02;
+
+    letter-spacing:-1.8px;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#e1e6ff;
+
+    font-size:
+        clamp(
+            13px,
+            1.25vw,
+            18px
+        );
+
+    font-weight:800;
+
+    margin-bottom:11px;
+}
+
+.description{
+    max-width:570px;
+
+    color:#aeb7d3;
+
+    font-size:11px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   MINI JOURNEY
+========================================================= */
+
+.mini-flow{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    margin-top:18px;
+}
+
+.mini-box{
+    padding:
+        6px 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    border-radius:6px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:#e8ecff;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.mini-arrow{
+    color:#ffe06e;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   CENTER LOGO AREA
+========================================================= */
+
+.center{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   ROUND LOGO AURA
+========================================================= */
+
+.logo-aura{
+    position:absolute;
+
+    width:
+        clamp(
+            220px,
+            23vw,
+            340px
+        );
+
+    height:
+        clamp(
+            220px,
+            23vw,
+            340px
+        );
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,220,100,.12),
+            rgba(255,75,150,.08) 40%,
+            rgba(90,130,255,.05) 58%,
+            transparent 74%
+        );
+
+    filter:blur(14px);
+
+    animation:
+        auraPulse
+        5s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes auraPulse{
+
+    from{
+        transform:scale(.93);
+        opacity:.5;
+    }
+
+    to{
+        transform:scale(1.08);
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   ROUND LOGO
+========================================================= */
+
+.background-logo{
+    position:relative;
+
+    width:
+        clamp(
+            190px,
+            17vw,
+            290px
+        );
+
+    height:
+        clamp(
+            190px,
+            17vw,
+            290px
+        );
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    opacity:.42;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(255,215,95,.35)
+        )
+        drop-shadow(
+            0 0 30px
+            rgba(255,90,155,.18)
+        );
+
+    animation:
+        logoFloat
+        6s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes logoFloat{
+
+    from{
+        transform:
+            translateY(5px)
+            scale(.98);
+    }
+
+    to{
+        transform:
+            translateY(-7px)
+            scale(1.03);
+    }
+}
+
+
+/* =========================================================
+   RIGHT JOURNEY
+========================================================= */
+
+.right{
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    gap:8px;
+}
+
+.journey-heading{
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    margin-bottom:2px;
+}
+
+.stage{
+    display:grid;
+
+    grid-template-columns:
+        43px
+        1fr
+        20px;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-height:52px;
+
+    padding:
+        8px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.stage:hover{
+
+    transform:translateX(-5px);
+
+    border-color:
+        rgba(255,215,95,.48);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,215,95,.11),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(255,215,90,.08);
+}
+
+.stage-no{
+    color:#ffe16d;
+
+    font-size:16px;
+    font-weight:900;
+}
+
+.stage-text h3{
+    font-size:10px;
+
+    letter-spacing:1.3px;
+
+    margin-bottom:3px;
+}
+
+.stage-text p{
+    color:#929bb9;
+
+    font-size:8px;
+
+    line-height:1.35;
+}
+
+.stage-arrow{
+    color:#ffffff;
+    opacity:.55;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+    margin-top:3px;
+}
+
+.stat{
+    text-align:center;
+
+    padding:7px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:7px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.stat strong{
+    display:block;
+
+    font-size:12px;
+}
+
+.stat span{
+    display:block;
+
+    color:#747e9d;
+
+    font-size:7px;
+
+    margin-top:2px;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   MAGNETIC TRAIN ZONE
+========================================================= */
+
+.train-zone{
+    position:relative;
+
+    flex:
+        0 0
+        clamp(
+            165px,
+            20vh,
+            205px
+        );
+
+    overflow:hidden;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.045);
+}
+
+
+/* =========================================================
+   MAGNETIC FIELD
+========================================================= */
+
+.magnetic-field{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:39px;
+
+    height:60px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,215,90,.12),
+            transparent 65%
+        );
+
+    filter:blur(10px);
+
+    animation:
+        magneticPulse
+        2.2s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes magneticPulse{
+
+    from{
+        opacity:.35;
+    }
+
+    to{
+        opacity:.9;
+    }
+}
+
+
+/* =========================================================
+   MAGNETIC TRACK
+========================================================= */
+
+.magnetic-track{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:35px;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,215,100,.5),
+            #ffffff,
+            rgba(255,215,100,.5),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(255,215,80,.8),
+
+        0 0 25px
+        rgba(255,215,80,.25);
+}
+
+.magnetic-track::before,
+.magnetic-track::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,.65) 0 25px,
+            transparent 25px 48px
+        );
+}
+
+.magnetic-track::before{
+    top:-9px;
+}
+
+.magnetic-track::after{
+    top:9px;
+}
+
+
+/* =========================================================
+   TRAIN
+========================================================= */
+
+.train{
+    position:absolute;
+
+    left:110%;
+    bottom:48px;
+
+    display:flex;
+    align-items:flex-end;
+
+    height:116px;
+
+    animation:
+        trainMove
+        29s
+        linear
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 16px
+            rgba(255,215,85,.17)
+        );
+}
+
+@keyframes trainMove{
+
+    from{
+        left:110%;
+    }
+
+    to{
+        left:-210%;
+    }
+}
+
+
+/* =========================================================
+   ENGINE
+========================================================= */
+
+.engine{
+    position:relative;
+
+    width:150px;
+    height:83px;
+
+    border:
+        1px solid
+        rgba(255,225,130,.72);
+
+    border-radius:
+        12px 5px 5px 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #684b22,
+            #b78632 38%,
+            #72501f 78%,
+            #332411
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(255,205,65,.16);
+}
+
+
+/* =========================================================
+   ENGINE LIGHT
+========================================================= */
+
+.engine-light{
+    position:absolute;
+
+    left:-14px;
+    top:25px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#fff9d2;
+
+    border:
+        2px solid
+        #ffe580;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 20px #ffe36c,
+        0 0 42px rgba(255,210,60,.9);
+
+    animation:
+        engineBlink
+        1s
+        ease-in-out
+        infinite;
+}
+
+@keyframes engineBlink{
+
+    0%,
+    100%{
+        opacity:.65;
+        transform:scale(.88);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   ENGINE LIGHT BEAM
+========================================================= */
+
+.engine-light::after{
+    content:"";
+
+    position:absolute;
+
+    left:19px;
+    top:6px;
+
+    width:90px;
+    height:9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,225,100,.42),
+            transparent
+        );
+
+    filter:blur(5px);
+}
+
+
+/* =========================================================
+   ENGINE PANEL
+========================================================= */
+
+.engine-panel{
+    position:absolute;
+
+    left:37px;
+    top:22px;
+
+    width:80px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(255,238,170,.55);
+
+    border-radius:5px;
+
+    background:
+        rgba(8,10,18,.86);
+
+    color:#ffe68d;
+
+    font-family:monospace;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    box-shadow:
+        inset 0 0 10px
+        rgba(255,215,100,.12);
+
+    animation:
+        panelBlink
+        1.8s
+        infinite;
+}
+
+@keyframes panelBlink{
+
+    0%,
+    100%{
+        opacity:.6;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+.engine-name{
+    position:absolute;
+
+    left:37px;
+    bottom:10px;
+
+    color:#fff0b2;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1.4px;
+}
+
+
+/* =========================================================
+   COACH
+========================================================= */
+
+.coach{
+    position:relative;
+
+    width:142px;
+    height:72px;
+
+    margin-left:4px;
+
+    border:
+        1px solid
+        rgba(140,175,255,.38);
+
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171d35,
+            #0b1022 70%,
+            #070a15
+        );
+
+    box-shadow:
+        inset 0 0 17px
+        rgba(80,120,255,.07);
+}
+
+
+/* =========================================================
+   COACH TOP LIGHTS
+========================================================= */
+
+.coach-lights{
+    position:absolute;
+
+    left:10px;
+    right:10px;
+    top:-5px;
+
+    height:4px;
+
+    display:flex;
+
+    gap:5px;
+}
+
+.coach-light{
+    flex:1;
+
+    height:4px;
+
+    border-radius:8px;
+
+    background:#ffe88a;
+
+    box-shadow:
+        0 0 5px #ffffff,
+        0 0 12px rgba(255,220,90,.95);
+
+    animation:
+        coachBlink
+        1.2s
+        ease-in-out
+        infinite;
+}
+
+.coach-light:nth-child(2){
+    animation-delay:.15s;
+}
+
+.coach-light:nth-child(3){
+    animation-delay:.30s;
+}
+
+.coach-light:nth-child(4){
+    animation-delay:.45s;
+}
+
+.coach-light:nth-child(5){
+    animation-delay:.60s;
+}
+
+@keyframes coachBlink{
+
+    0%,
+    100%{
+        opacity:.30;
+    }
+
+    50%{
+        opacity:1;
+        transform:scaleY(1.35);
+    }
+}
+
+
+/* =========================================================
+   DIGITAL BOX
+========================================================= */
+
+.tech-panel{
+    position:absolute;
+
+    left:11px;
+    right:11px;
+
+    top:15px;
+
+    height:32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(130,165,255,.46);
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,27,52,.96),
+            rgba(5,8,19,.96)
+        );
+
+    box-shadow:
+        inset 0 0 10px
+        rgba(100,140,255,.12);
+}
+
+.tech{
+    font-family:monospace;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 8px currentColor;
+}
+
+
+/* =========================================================
+   TECHNOLOGY COLOURS
+========================================================= */
+
+.html .tech{
+    color:#ff9162;
+}
+
+.css .tech{
+    color:#63aaff;
+}
+
+.javascript .tech{
+    color:#ffe56a;
+}
+
+.java .tech{
+    color:#ff7d70;
+}
+
+.mysql .tech{
+    color:#70ddff;
+}
+
+.python .tech{
+    color:#7bdcff;
+}
+
+.c .tech{
+    color:#bdcaff;
+}
+
+.cpp .tech{
+    color:#8cb7ff;
+}
+
+.react .tech{
+    color:#69e9ff;
+}
+
+.typescript .tech{
+    color:#6caaff;
+}
+
+.spring .tech{
+    color:#8effa2;
+}
+
+
+/* =========================================================
+   COACH BOTTOM LIGHT
+========================================================= */
+
+.tech-line{
+    position:absolute;
+
+    left:11px;
+    right:11px;
+
+    bottom:8px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,215,100,.8),
+            transparent
+        );
+
+    box-shadow:
+        0 0 7px
+        rgba(255,215,90,.5);
+}
+
+
+/* =========================================================
+   NO WHEELS
+   MAGNETIC FLOAT EFFECT
+========================================================= */
+
+.coach,
+.engine{
+    animation:
+        magneticFloat
+        1.8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.coach:nth-child(3){
+    animation-delay:.12s;
+}
+
+.coach:nth-child(4){
+    animation-delay:.20s;
+}
+
+.coach:nth-child(5){
+    animation-delay:.28s;
+}
+
+.coach:nth-child(6){
+    animation-delay:.36s;
+}
+
+.coach:nth-child(7){
+    animation-delay:.44s;
+}
+
+.coach:nth-child(8){
+    animation-delay:.52s;
+}
+
+.coach:nth-child(9){
+    animation-delay:.60s;
+}
+
+.coach:nth-child(10){
+    animation-delay:.68s;
+}
+
+.coach:nth-child(11){
+    animation-delay:.76s;
+}
+
+.coach:nth-child(12){
+    animation-delay:.84s;
+}
+
+@keyframes magneticFloat{
+
+    from{
+        transform:translateY(2px);
+    }
+
+    to{
+        transform:translateY(-4px);
+    }
+}
+
+
+/* =========================================================
+   COUPLER
+========================================================= */
+
+.coupler{
+    position:absolute;
+
+    right:-7px;
+    bottom:25px;
+
+    width:8px;
+    height:7px;
+
+    border-radius:2px;
+
+    background:#9da5b9;
+
+    box-shadow:
+        0 0 6px
+        rgba(170,190,230,.5);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:18px;
+
+    background:
+        rgba(0,0,0,.72);
+
+    backdrop-filter:blur(11px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    position:relative;
+
+    width:
+        min(
+            850px,
+            94vw
+        );
+
+    max-height:88vh;
+
+    overflow:auto;
+
+    padding:25px;
+
+    border-radius:17px;
+
+    background:#ffffff;
+
+    color:#171922;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.6);
+}
+
+.modal-close{
+    position:absolute;
+
+    top:13px;
+    right:15px;
+
+    width:32px;
+    height:32px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#eff0f4;
+
+    color:#222530;
+
+    font-size:19px;
+
+    cursor:pointer;
+}
+
+.modal-label{
+    color:#92731a;
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    margin-bottom:5px;
+}
+
+.modal-box h2{
+    font-size:25px;
+
+    margin-bottom:7px;
+}
+
+.modal-description{
+    color:#626675;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   MODAL FLOW
+========================================================= */
+
+.journey-flow{
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        28px
+        1fr
+        28px
+        1fr
+        28px
+        1fr;
+
+    align-items:center;
+
+    margin:20px 0;
+}
+
+.flow-node{
+    min-height:65px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:3px;
+
+    border:
+        1px solid
+        #dedfe5;
+
+    border-radius:9px;
+
+    background:#fafafa;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.flow-node:hover,
+.flow-node.active{
+    border-color:#c99e31;
+
+    background:#fff9e8;
+
+    box-shadow:
+        0 8px 20px
+        rgba(190,145,40,.13);
+}
+
+.flow-node strong{
+    font-size:14px;
+}
+
+.flow-node span{
+    color:#777b87;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.flow-arrow{
+    text-align:center;
+
+    color:#c69c30;
+
+    font-size:17px;
+    font-weight:900;
+}
+
+
+/* =========================================================
+   MODAL POINTS
+========================================================= */
+
+.modal-points{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:8px;
+}
+
+.modal-point{
+    padding:11px;
+
+    border:
+        1px solid
+        #e4e5e9;
+
+    border-radius:8px;
+
+    background:#fafbfc;
+}
+
+.modal-point strong{
+    display:block;
+
+    font-size:10px;
+
+    margin-bottom:4px;
+}
+
+.modal-point span{
+    color:#686d7b;
+
+    font-size:9px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .main{
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .center{
+        display:none;
+    }
+}
+
+
+@media(max-width:760px){
+
+    .topbar{
+        padding:0 15px;
+        flex-basis:50px;
+    }
+
+    .brand{
+        font-size:9px;
+    }
+
+    .login-box{
+        min-width:90px;
+        height:33px;
+        font-size:9px;
+    }
+
+    .main{
+        display:block;
+
+        padding:
+            10px 15px 3px;
+    }
+
+    .left{
+        height:46%;
+    }
+
+    .right{
+        height:54%;
+    }
+
+    .left h1{
+        font-size:27px;
+    }
+
+    .description{
+        font-size:9px;
+    }
+
+    .mini-flow{
+        margin-top:9px;
+    }
+
+    .mini-box{
+        font-size:6px;
+        padding:5px 6px;
+    }
+
+    .stage{
+        min-height:43px;
+    }
+
+    .stage-text h3{
+        font-size:8px;
+    }
+
+    .stage-text p{
+        font-size:6px;
+    }
+
+    .train-zone{
+        flex-basis:145px;
+    }
+
+    .train{
+        transform:scale(.75);
+        transform-origin:
+            bottom left;
+    }
+
+    .journey-flow{
+        grid-template-columns:1fr;
+        gap:5px;
+    }
+
+    .flow-arrow{
+        transform:rotate(90deg);
+    }
+
+    .modal-points{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-height:700px){
+
+    .topbar{
+        flex-basis:48px;
+    }
+
+    .main{
+        padding-top:8px;
+    }
+
+    .left h1{
+        font-size:27px;
+    }
+
+    .description{
+        font-size:9px;
+    }
+
+    .train-zone{
+        flex-basis:145px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SPACE BACKGROUND
+========================================================= -->
+
+<div class="space">
+
+    <div class="aurora"></div>
+
+    <div class="light yellow"></div>
+    <div class="light rose"></div>
+    <div class="light blue"></div>
+
+    <div class="digital-grid"></div>
+
+    <div class="scan"></div>
+
+    <div
+        class="stars"
+        id="stars"
+    ></div>
+
+    <div class="shooting one"></div>
+    <div class="shooting two"></div>
+    <div class="shooting three"></div>
+
+</div>
+
+
+<div class="page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <span class="brand-dot"></span>
+
+        MY DEV LEARN JOURNEY
+
+    </div>
+
+
+    <a
+        href="/login"
+        class="login-box"
+    >
+        LOGIN
+    </a>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main">
+
+
+<!-- =========================================================
+     LEFT
+========================================================= -->
+
+<section class="left">
+
+    <div class="label">
+        DEVELOPER LEARNING SYSTEM
+    </div>
+
+    <h1>
+        ONE CONNECTED
+        <br>
+        DEVELOPER JOURNEY
+    </h1>
+
+    <div class="subtitle">
+        Learn. Practice. Test. Build.
+    </div>
+
+    <p class="description">
+
+        My Dev Learn Journey is a complete developer
+        learning system. You learn a technology step by
+        step, practice what you learn, test your
+        understanding, and finally use your skills to
+        build projects.
+
+    </p>
+
+
+    <div class="mini-flow">
+
+        <div class="mini-box">
+            LEARN
+        </div>
+
+        <span class="mini-arrow">
+            →
+        </span>
+
+        <div class="mini-box">
+            PRACTICE
+        </div>
+
+        <span class="mini-arrow">
+            →
+        </span>
+
+        <div class="mini-box">
+            TEST
+        </div>
+
+        <span class="mini-arrow">
+            →
+        </span>
+
+        <div class="mini-box">
+            BUILD
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ROUND BACKGROUND LOGO
+========================================================= -->
+
+<section class="center">
+
+    <div class="logo-aura"></div>
+
+    <img
+        src="/favicon.png"
+        class="background-logo"
+        alt="My Dev Learn Journey"
+    >
+
+</section>
+
+
+
+<!-- =========================================================
+     JOURNEY
+========================================================= -->
+
+<section class="right">
+
+    <div class="journey-heading">
+        HOW THE JOURNEY WORKS
+    </div>
+
+
+    <div
+        class="stage"
+        data-stage="learn"
+    >
+
+        <div class="stage-no">
+            01
+        </div>
+
+        <div class="stage-text">
+
+            <h3>
+                LEARN
+            </h3>
+
+            <p>
+                Chapters, concepts, examples & notes.
+            </p>
+
+        </div>
+
+        <div class="stage-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <div
+        class="stage"
+        data-stage="practice"
+    >
+
+        <div class="stage-no">
+            02
+        </div>
+
+        <div class="stage-text">
+
+            <h3>
+                PRACTICE
+            </h3>
+
+            <p>
+                Coding exercises and practical tasks.
+            </p>
+
+        </div>
+
+        <div class="stage-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <div
+        class="stage"
+        data-stage="test"
+    >
+
+        <div class="stage-no">
+            03
+        </div>
+
+        <div class="stage-text">
+
+            <h3>
+                TEST
+            </h3>
+
+            <p>
+                Chapter, block and final assessments.
+            </p>
+
+        </div>
+
+        <div class="stage-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <div
+        class="stage"
+        data-stage="build"
+    >
+
+        <div class="stage-no">
+            04
+        </div>
+
+        <div class="stage-text">
+
+            <h3>
+                BUILD
+            </h3>
+
+            <p>
+                Apply your skills and build projects.
+            </p>
+
+        </div>
+
+        <div class="stage-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+            <strong>11+</strong>
+            <span>TECH</span>
+        </div>
+
+        <div class="stat">
+            <strong>500+</strong>
+            <span>PROJECTS</span>
+        </div>
+
+        <div class="stat">
+            <strong>4</strong>
+            <span>STAGES</span>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     MAGNETIC TRAIN
+========================================================= -->
+
+<section class="train-zone">
+
+    <div class="magnetic-field"></div>
+
+    <div class="magnetic-track"></div>
+
+
+    <div class="train">
+
+
+        <!-- ENGINE -->
+
+        <div class="engine">
+
+            <div class="engine-light"></div>
+
+            <div class="engine-panel">
+                ONLINE
+            </div>
+
+            <div class="engine-name">
+                DEV ENGINE
+            </div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- HTML -->
+
+        <div class="coach html">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    HTML
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- CSS -->
+
+        <div class="coach css">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    CSS
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <div class="coach javascript">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    JAVASCRIPT
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- JAVA -->
+
+        <div class="coach java">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    JAVA
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- MYSQL -->
+
+        <div class="coach mysql">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    MYSQL
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- PYTHON -->
+
+        <div class="coach python">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    PYTHON
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- C -->
+
+        <div class="coach c">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    C
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- C++ -->
+
+        <div class="coach cpp">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    C++
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- REACT -->
+
+        <div class="coach react">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    REACT
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- TYPESCRIPT -->
+
+        <div class="coach typescript">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    TYPESCRIPT
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+            <div class="coupler"></div>
+
+        </div>
+
+
+
+        <!-- SPRING -->
+
+        <div class="coach spring">
+
+            <div class="coach-lights">
+
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+                <span class="coach-light"></span>
+
+            </div>
+
+            <div class="tech-panel">
+                <span class="tech">
+                    SPRING
+                </span>
+            </div>
+
+            <div class="tech-line"></div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</div>
+
+
+
+<!-- =========================================================
+     MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-label">
+            DEVELOPER JOURNEY
+        </div>
+
+        <h2 id="modalTitle">
+            LEARN
+        </h2>
+
+        <p
+            class="modal-description"
+            id="modalDescription"
+        ></p>
+
+
+        <div class="journey-flow">
+
+            <div
+                class="flow-node"
+                data-flow="learn"
+            >
+                <strong>01</strong>
+                <span>LEARN</span>
+            </div>
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+            <div
+                class="flow-node"
+                data-flow="practice"
+            >
+                <strong>02</strong>
+                <span>PRACTICE</span>
+            </div>
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+            <div
+                class="flow-node"
+                data-flow="test"
+            >
+                <strong>03</strong>
+                <span>TEST</span>
+            </div>
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+            <div
+                class="flow-node"
+                data-flow="build"
+            >
+                <strong>04</strong>
+                <span>BUILD</span>
+            </div>
+
+        </div>
+
+
+        <div
+            class="modal-points"
+            id="modalPoints"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   STAR GENERATOR
+========================================================= */
+
+const stars =
+    document.getElementById("stars");
+
+for(let i = 0; i < 260; i++){
+
+    const star =
+        document.createElement("span");
+
+    star.className =
+        Math.random() > .86
+        ? "star big"
+        : "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.setProperty(
+        "--time",
+        (1.1 + Math.random() * 5) + "s"
+    );
+
+    star.style.animationDelay =
+        (-Math.random() * 6) + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* =========================================================
+   JOURNEY DATA
+========================================================= */
+
+const journey = {
+
+    learn: {
+
+        title:
+            "01 — LEARN",
+
+        description:
+            "The journey starts with learning. Every technology is divided into clear chapters so you can understand concepts step by step.",
+
+        points: [
+
+            [
+                "CHAPTERS",
+                "Technology topics are organized into structured chapters."
+            ],
+
+            [
+                "CONCEPTS",
+                "Important concepts are explained in a simple and clear way."
+            ],
+
+            [
+                "EXAMPLES",
+                "Examples show how the concepts work in real code."
+            ],
+
+            [
+                "NOTES",
+                "Useful notes help you remember and revise important information."
+            ],
+
+            [
+                "STEP BY STEP",
+                "You follow a logical learning order from basic to advanced topics."
+            ],
+
+            [
+                "PROGRESS",
+                "Your learning progress can be tracked as you move forward."
+            ]
+
+        ]
+
+    },
+
+
+    practice: {
+
+        title:
+            "02 — PRACTICE",
+
+        description:
+            "After learning a concept, you practice it through coding exercises and practical tasks. This turns knowledge into usable developer skills.",
+
+        points: [
+
+            [
+                "CODING EXERCISES",
+                "Write code and solve focused programming problems."
+            ],
+
+            [
+                "PRACTICAL TASKS",
+                "Work on hands-on tasks similar to real development work."
+            ],
+
+            [
+                "HANDS-ON",
+                "Use the concepts instead of only reading about them."
+            ],
+
+            [
+                "APPLY CONCEPTS",
+                "Connect multiple concepts while solving problems."
+            ],
+
+            [
+                "SKILL BUILDING",
+                "Regular practice improves your programming ability."
+            ],
+
+            [
+                "TEST PREPARATION",
+                "Practice prepares you for the testing stage."
+            ]
+
+        ]
+
+    },
+
+
+    test: {
+
+        title:
+            "03 — TEST",
+
+        description:
+            "Testing checks how well you understand what you learned and practiced. Different levels of tests can measure your knowledge.",
+
+        points: [
+
+            [
+                "CHAPTER TEST",
+                "Check your understanding after completing a chapter."
+            ],
+
+            [
+                "BLOCK TEST",
+                "Test several related chapters together."
+            ],
+
+            [
+                "FINAL TEST",
+                "Complete a larger assessment after finishing the learning path."
+            ],
+
+            [
+                "KNOWLEDGE CHECK",
+                "Identify areas that need more learning or practice."
+            ],
+
+            [
+                "PROGRESS",
+                "Test results provide another way to measure your journey."
+            ],
+
+            [
+                "READY TO BUILD",
+                "A strong foundation prepares you for project development."
+            ]
+
+        ]
+
+    },
+
+
+    build: {
+
+        title:
+            "04 — BUILD",
+
+        description:
+            "Building is where learning becomes real development. You combine your skills, solve problems, and create projects.",
+
+        points: [
+
+            [
+                "PROJECT IDEAS",
+                "Choose projects that match your current skills."
+            ],
+
+            [
+                "REAL IMPLEMENTATION",
+                "Turn concepts into working software."
+            ],
+
+            [
+                "COMBINE SKILLS",
+                "Use different concepts and technologies together."
+            ],
+
+            [
+                "PROBLEM SOLVING",
+                "Solve real development problems through projects."
+            ],
+
+            [
+                "500+ PROJECTS",
+                "Build a large collection of practical project experiences."
+            ],
+
+            [
+                "DEVELOPER GROWTH",
+                "Every project becomes another step in your developer journey."
+            ]
+
+        ]
+
+    }
+
+};
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+const modal =
+    document.getElementById("modal");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalPoints =
+    document.getElementById("modalPoints");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+
+/* =========================================================
+   SHOW STAGE
+========================================================= */
+
+function showStage(stage){
+
+    const data =
+        journey[stage];
+
+    if(!data){
+        return;
+    }
+
+    modalTitle.textContent =
+        data.title;
+
+    modalDescription.textContent =
+        data.description;
+
+    modalPoints.innerHTML = "";
+
+
+    data.points.forEach(point => {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "modal-point";
+
+        item.innerHTML = `
+            <strong>${point[0]}</strong>
+            <span>${point[1]}</span>
+        `;
+
+        modalPoints.appendChild(item);
+
+    });
+
+
+    document
+        .querySelectorAll(".flow-node")
+        .forEach(node => {
+
+            node.classList.toggle(
+                "active",
+                node.dataset.flow === stage
+            );
+
+        });
+
+
+    modal.classList.add("show");
+
+}
+
+
+/* =========================================================
+   STAGE CLICK
+========================================================= */
+
+document
+    .querySelectorAll(".stage")
+    .forEach(card => {
+
+        card.addEventListener(
+            "click",
+            () => {
+
+                showStage(
+                    card.dataset.stage
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   FLOW CLICK
+========================================================= */
+
+document
+    .querySelectorAll(".flow-node")
+    .forEach(node => {
+
+        node.addEventListener(
+            "click",
+            () => {
+
+                showStage(
+                    node.dataset.flow
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+closeModal.addEventListener(
+    "click",
+    () => {
+
+        modal.classList.remove("show");
+
+    }
+);
+
+
+/* =========================================================
+   OUTSIDE CLOSE
+========================================================= */
+
+modal.addEventListener(
+    "click",
+    event => {
+
+        if(event.target === modal){
+
+            modal.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(event.key === "Escape"){
+
+            modal.classList.remove("show");
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+

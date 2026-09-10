@@ -1,0 +1,972 @@
+
+/* =====================================================
+   DLTJ2.10
+   DYNAMIC LEARNING SYSTEM
+   FILE: src/pages/Test/Test.css
+   DATE: 2026-09-07
+   LOCATION: src/pages/Test
+   PURPOSE: COMMON STYLE FOR ALL TEST PAGES
+===================================================== */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.test-page {
+  min-height: 100vh;
+
+  padding: 34px 28px 80px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(255, 215, 55, 0.10),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 95% 90%,
+      rgba(255, 225, 80, 0.08),
+      transparent 28%
+    ),
+    #f5f6f8;
+
+  color: #17191d;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.test-page-header {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto 26px;
+
+  padding: 31px 35px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border: 1px solid #e0e3e7;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fafbfc
+    );
+
+  box-shadow:
+    0 18px 42px rgba(20, 24, 30, 0.07);
+}
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.test-eyebrow {
+  display: inline-flex;
+
+  margin-bottom: 11px;
+
+  padding: 7px 12px;
+
+  border: 1px solid #dfca61;
+  border-radius: 999px;
+
+  background: #fffdef;
+
+  color: #765c00;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+/* =====================================================
+   HEADER TEXT
+===================================================== */
+
+.test-page-header h1 {
+  margin: 0 0 8px;
+
+  color: #171a1f;
+
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.test-page-header p {
+  margin: 0;
+
+  color: #70757d;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.test-timer {
+  min-width: 112px;
+
+  padding: 12px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfc554;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffce5,
+      #f8e17a
+    );
+
+  color: #695100;
+
+  box-shadow:
+    -10px 0 26px rgba(255, 215, 55, 0.14);
+}
+
+.test-timer span {
+  margin-bottom: 3px;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.test-timer strong {
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 24px;
+  line-height: 1.1;
+
+  letter-spacing: 1px;
+}
+
+.test-timer.loading {
+  opacity: 0.7;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.test-card {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto 22px;
+
+  padding: 28px 30px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe2e6;
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 13px 30px rgba(20, 24, 30, 0.06);
+}
+
+.test-card-heading {
+  margin-bottom: 22px;
+}
+
+.test-section-label {
+  display: inline-flex;
+
+  margin-bottom: 9px;
+
+  color: #846700;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.test-card-heading h2,
+.test-card h2 {
+  margin: 0 0 7px;
+
+  color: #1c2025;
+
+  font-size: 23px;
+  line-height: 1.3;
+
+  font-weight: 900;
+}
+
+.test-card-heading p,
+.test-card > p {
+  margin: 0;
+
+  color: #737980;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.test-form-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #383d44;
+
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.test-select {
+  width: 100%;
+  max-width: 520px;
+
+  min-height: 48px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #d7dbe0;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  color: #292d33;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.test-select:focus {
+  border-color: #dfc34b;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 215, 55, 0.18);
+}
+
+/* =====================================================
+   CHAPTER GRID
+===================================================== */
+
+.test-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.test-grid .test-card {
+  margin: 0;
+}
+
+/* =====================================================
+   CHAPTER CARD
+===================================================== */
+
+.test-chapter-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 230px;
+}
+
+.test-chapter-number {
+  display: inline-flex;
+  align-self: flex-start;
+
+  margin-bottom: 12px;
+
+  padding: 6px 10px;
+
+  border: 1px solid #dfca61;
+  border-radius: 9px;
+
+  background: #fffced;
+
+  color: #765c00;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.9px;
+}
+
+.test-chapter-card h3 {
+  margin: 0 0 14px;
+
+  color: #1c2025;
+
+  font-size: 18px;
+  line-height: 1.35;
+
+  font-weight: 900;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.test-status {
+  display: inline-flex;
+  align-items: center;
+
+  align-self: flex-start;
+
+  margin-bottom: 18px;
+
+  padding: 6px 10px;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.test-status.passed {
+  border: 1px solid #c7dfca;
+
+  background: #f1faf2;
+
+  color: #35633a;
+}
+
+.test-status.pending {
+  border: 1px solid #e2e4e7;
+
+  background: #f7f8f9;
+
+  color: #6a7078;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.test-primary-button,
+.test-secondary-button {
+  min-height: 45px;
+
+  padding: 11px 18px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 170ms ease,
+    border-color 170ms ease,
+    box-shadow 170ms ease,
+    background 170ms ease;
+}
+
+.test-primary-button {
+  border: 1px solid #ddc34c;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff9d5,
+      #f7df75
+    );
+
+  color: #695100;
+
+  box-shadow:
+    -8px 0 22px
+    rgba(255, 215, 55, 0.13);
+}
+
+.test-primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  border-color: #ccb23b;
+
+  box-shadow:
+    -13px 0 28px
+    rgba(255, 215, 55, 0.18),
+    0 8px 20px rgba(18, 22, 28, 0.07);
+}
+
+.test-secondary-button {
+  border: 1px solid #d7dbe0;
+
+  background: #ffffff;
+
+  color: #34383e;
+}
+
+.test-secondary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  border-color: #dfc34b;
+
+  background: #fffef8;
+}
+
+.test-primary-button:disabled,
+.test-secondary-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+/* =====================================================
+   TEST QUESTION LIST
+===================================================== */
+
+.test-question-list {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto;
+}
+
+/* =====================================================
+   QUESTION CARD
+===================================================== */
+
+.test-question-card {
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  padding: 27px 29px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe2e6;
+  border-radius: 21px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 11px 26px rgba(20, 24, 30, 0.05);
+}
+
+.test-question-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.test-question-number {
+  color: #806300;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.test-question-marks {
+  padding: 5px 9px;
+
+  border: 1px solid #e1e4e7;
+  border-radius: 8px;
+
+  background: #f7f8f9;
+
+  color: #666c74;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.test-question-card h2 {
+  margin: 0 0 23px;
+
+  color: #1b1f24;
+
+  font-size: 19px;
+  line-height: 1.55;
+
+  font-weight: 850;
+}
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.test-options {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.test-option {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe2e6;
+  border-radius: 13px;
+
+  background: #fafbfc;
+
+  color: #363b42;
+
+  cursor: pointer;
+
+  transition:
+    border-color 170ms ease,
+    background 170ms ease,
+    transform 170ms ease;
+}
+
+.test-option:hover {
+  transform: translateX(2px);
+
+  border-color: #dfc34b;
+
+  background: #fffef7;
+}
+
+.test-option.selected {
+  border-color: #dbc04a;
+
+  background: #fffbea;
+}
+
+.test-option input {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  accent-color: #c8aa2e;
+
+  cursor: pointer;
+}
+
+.test-option-letter {
+  width: 29px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e0e3e7;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #686e76;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.test-option-text {
+  min-width: 0;
+
+  color: #363b42;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TEXT ANSWER
+===================================================== */
+
+.test-text-answer {
+  width: 100%;
+
+  min-height: 130px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  border: 1px solid #d8dce1;
+  border-radius: 13px;
+
+  background: #fafbfc;
+
+  color: #2f343a;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  line-height: 1.65;
+
+  outline: none;
+}
+
+.test-text-answer:focus {
+  border-color: #dfc34b;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 215, 55, 0.16);
+
+  background: #ffffff;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.test-actions {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 22px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 11px;
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.test-error {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto 18px;
+
+  padding: 13px 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e7c8c8;
+  border-radius: 12px;
+
+  background: #fff6f6;
+
+  color: #8a4545;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.test-error-card {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 80px auto;
+
+  padding: 44px 30px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e0e3e7;
+  border-radius: 23px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 17px 38px rgba(20, 24, 30, 0.07);
+}
+
+.test-error-icon {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfc75d;
+  border-radius: 16px;
+
+  background: #fff9d8;
+
+  color: #785e00;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.test-error-card h2 {
+  margin: 0 0 9px;
+
+  color: #20242a;
+
+  font-size: 25px;
+}
+
+.test-error-card p {
+  margin: 0 0 22px;
+
+  color: #737880;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.test-empty-card {
+  max-width: 650px;
+
+  padding: 55px 30px;
+
+  text-align: center;
+}
+
+.test-empty-icon {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfc75d;
+  border-radius: 16px;
+
+  background: #fff9d8;
+
+  color: #785e00;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.test-empty-card h2 {
+  margin-bottom: 8px;
+}
+
+.test-empty-card p {
+  color: #737880;
+}
+
+/* =====================================================
+   INLINE STATES
+===================================================== */
+
+.test-inline-loading,
+.test-empty-inline {
+  padding: 30px 10px;
+
+  text-align: center;
+
+  color: #737880;
+
+  font-size: 14px;
+}
+
+.test-empty-inline h3 {
+  margin: 0 0 7px;
+
+  color: #282c32;
+
+  font-size: 18px;
+}
+
+.test-empty-inline p {
+  margin: 0;
+
+  color: #737880;
+}
+
+.test-loading-card {
+  min-height: 270px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.test-loading-spinner {
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dec454;
+  border-radius: 15px;
+
+  background: #fff9d8;
+
+  color: #755a00;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* =====================================================
+   FINAL CARD
+===================================================== */
+
+.test-final-card {
+  padding: 31px 30px;
+}
+
+.test-final-card h2 {
+  margin-bottom: 9px;
+}
+
+.test-final-card p {
+  max-width: 700px;
+
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .test-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 680px) {
+
+  .test-page {
+    padding:
+      20px
+      14px
+      55px;
+  }
+
+  .test-page-header {
+    padding: 25px 21px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+
+  .test-timer {
+    width: 100%;
+  }
+
+  .test-card {
+    padding: 23px 19px;
+
+    border-radius: 19px;
+  }
+
+  .test-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .test-question-card {
+    padding: 22px 18px;
+  }
+
+  .test-question-card h2 {
+    font-size: 17px;
+  }
+
+  .test-option-text {
+    font-size: 13px;
+  }
+
+  .test-actions {
+    flex-direction: column;
+  }
+
+  .test-actions button {
+    width: 100%;
+  }
+
+  .test-select {
+    max-width: none;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .test-primary-button,
+  .test-secondary-button,
+  .test-option {
+    transition: none;
+  }
+
+}

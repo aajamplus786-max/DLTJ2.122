@@ -1,0 +1,616 @@
+/* =====================================================
+   DLTJ2.1
+   LESSON PAGE
+   FILE: src/styles/lesson.css
+   ===================================================== */
+
+/* =====================================================
+   LESSON PAGE
+   ===================================================== */
+
+.learning-page {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(255, 216, 50, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 5% 42%,
+      rgba(244, 63, 94, 0.10),
+      transparent 30%
+    ),
+    #ffffff;
+
+  color: #181818;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+
+.learning-container {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 42px 0 80px;
+}
+
+/* =====================================================
+   BREADCRUMB
+   ===================================================== */
+
+.learning-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 28px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(20, 20, 20, 0.07);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.learning-breadcrumb a {
+  color: #9a7200;
+  font-weight: 750;
+  text-decoration: none;
+
+  transition:
+    color 160ms ease;
+}
+
+.learning-breadcrumb a:hover {
+  color: #e0003c;
+}
+
+.learning-breadcrumb span {
+  color: #aaa;
+}
+
+.learning-breadcrumb span:last-child {
+  color: #333;
+  font-weight: 650;
+}
+
+/* =====================================================
+   LESSON HEADER AREA
+   ===================================================== */
+
+.learning-container > * {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   COMMON LESSON CARD LOOK
+   ===================================================== */
+
+.lesson-header,
+.lesson-content,
+.lesson-navigation {
+  width: 100%;
+}
+
+/* =====================================================
+   LESSON HEADER
+   ===================================================== */
+
+.lesson-header {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 30px;
+  padding: 42px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 28px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.065),
+    0 0 45px rgba(255, 215, 0, 0.08);
+}
+
+.lesson-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  top: -130px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 216, 50, 0.18);
+
+  filter: blur(38px);
+
+  pointer-events: none;
+}
+
+.lesson-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  left: -120px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 63, 94, 0.10);
+
+  filter: blur(38px);
+
+  pointer-events: none;
+}
+
+.lesson-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================================
+   LESSON CONTENT
+   ===================================================== */
+
+.lesson-content {
+  margin-bottom: 30px;
+  padding: 38px 42px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.055);
+}
+
+/* =====================================================
+   CONTENT TYPOGRAPHY
+   ===================================================== */
+
+.lesson-content h1,
+.lesson-content h2,
+.lesson-content h3,
+.lesson-content h4 {
+  color: #171717;
+  line-height: 1.25;
+}
+
+.lesson-content h1 {
+  margin: 0 0 24px;
+
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+}
+
+.lesson-content h2 {
+  margin: 34px 0 14px;
+
+  font-size: 26px;
+  font-weight: 850;
+}
+
+.lesson-content h3 {
+  margin: 28px 0 12px;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.lesson-content p {
+  margin: 0 0 18px;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.lesson-content ul,
+.lesson-content ol {
+  margin: 18px 0 24px;
+  padding-left: 25px;
+
+  color: #555;
+
+  line-height: 1.8;
+}
+
+.lesson-content li {
+  margin-bottom: 8px;
+}
+
+/* =====================================================
+   CODE BLOCKS
+   ===================================================== */
+
+.lesson-content pre {
+  overflow-x: auto;
+
+  margin: 24px 0;
+  padding: 22px 24px;
+
+  border: 1px solid #252525;
+  border-radius: 16px;
+
+  background: #171717;
+  color: #f5f5f5;
+
+  font-family:
+    "Consolas",
+    "Cascadia Code",
+    monospace;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+.lesson-content code {
+  font-family:
+    "Consolas",
+    "Cascadia Code",
+    monospace;
+}
+
+.lesson-content :not(pre) > code {
+  padding: 3px 7px;
+
+  border-radius: 6px;
+
+  background: #fff5bd;
+  color: #725500;
+
+  font-size: 0.9em;
+}
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+.lesson-content a {
+  color: #c90038;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lesson-content a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.lesson-content table {
+  width: 100%;
+
+  margin: 24px 0;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(20, 20, 20, 0.09);
+  border-radius: 14px;
+}
+
+.lesson-content th,
+.lesson-content td {
+  padding: 13px 15px;
+
+  border-bottom: 1px solid rgba(20, 20, 20, 0.07);
+
+  text-align: left;
+}
+
+.lesson-content th {
+  background: #fff7c9;
+
+  color: #5e4700;
+
+  font-weight: 850;
+}
+
+.lesson-content tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =====================================================
+   LESSON NAVIGATION
+   ===================================================== */
+
+.lesson-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-top: 10px;
+  padding: 24px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* =====================================================
+   NAVIGATION BUTTONS
+   ===================================================== */
+
+.lesson-navigation button {
+  min-width: 145px;
+  min-height: 48px;
+
+  padding: 0 22px;
+
+  border: 0;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4c400,
+      #ffd83d
+    );
+
+  color: #382b00;
+
+  font-size: 14px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px rgba(239, 190, 0, 0.20);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.lesson-navigation button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(239, 190, 0, 0.29);
+}
+
+.lesson-navigation button:active {
+  transform: translateY(0);
+}
+
+.lesson-navigation button:disabled {
+  opacity: 0.42;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* =====================================================
+   EMPTY LESSON
+   ===================================================== */
+
+.learning-empty {
+  position: relative;
+  overflow: hidden;
+
+  padding: 70px 40px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.06);
+}
+
+.learning-empty::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 216, 50, 0.16);
+
+  filter: blur(35px);
+}
+
+.learning-empty h1 {
+  position: relative;
+
+  margin: 0 0 12px;
+
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.learning-empty p {
+  position: relative;
+
+  margin: 0 0 22px;
+
+  color: #707070;
+
+  line-height: 1.7;
+}
+
+.learning-empty a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  border-radius: 12px;
+
+  background: #fff1a8;
+
+  color: #6a5100;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.learning-empty a:hover {
+  transform: translateY(-2px);
+  background: #ffe67a;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .learning-container {
+    width: min(100% - 36px, 720px);
+    padding-top: 30px;
+  }
+
+  .lesson-header,
+  .lesson-content {
+    padding: 30px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .learning-container {
+    width: calc(100% - 22px);
+    padding-top: 20px;
+    padding-bottom: 55px;
+  }
+
+  .learning-breadcrumb {
+    gap: 6px;
+
+    margin-bottom: 20px;
+    padding: 10px 12px;
+
+    font-size: 12px;
+  }
+
+  .lesson-header {
+    margin-bottom: 20px;
+    padding: 25px 20px;
+
+    border-radius: 21px;
+  }
+
+  .lesson-content {
+    margin-bottom: 20px;
+    padding: 25px 20px;
+
+    border-radius: 21px;
+  }
+
+  .lesson-content p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .lesson-content pre {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    padding: 17px;
+
+    font-size: 13px;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 18px;
+  }
+
+  .lesson-navigation button {
+    width: 100%;
+  }
+
+  .learning-empty {
+    padding: 50px 22px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL
+   ===================================================== */
+
+@media (max-width: 400px) {
+  .learning-container {
+    width: calc(100% - 14px);
+  }
+
+  .lesson-header,
+  .lesson-content {
+    padding: 21px 16px;
+  }
+
+  .lesson-content h2 {
+    font-size: 23px;
+  }
+
+  .lesson-content h3 {
+    font-size: 19px;
+  }
+}

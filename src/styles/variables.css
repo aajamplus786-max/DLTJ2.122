@@ -1,0 +1,388 @@
+/* =====================================================
+   DLTJ2.1
+   GLOBAL DESIGN VARIABLES
+   FILE: src/styles/variables.css
+   DATE: 2026-08-31
+   ===================================================== */
+
+:root {
+  /* ===================================================
+     CORE COLORS
+     =================================================== */
+
+  --color-white: #ffffff;
+  --color-black: #111111;
+
+  --color-text: #171717;
+  --color-text-secondary: #5f5f5f;
+  --color-text-muted: #858585;
+
+  --color-border: rgba(20, 20, 20, 0.08);
+  --color-border-strong: rgba(20, 20, 20, 0.14);
+
+  /* ===================================================
+     BRAND COLORS
+     =================================================== */
+
+  --color-yellow: #facc15;
+  --color-yellow-light: #fff7c7;
+  --color-yellow-soft: #fffbea;
+  --color-yellow-dark: #9a6500;
+
+  --color-rose: #f43f5e;
+  --color-rose-light: #ffe4e9;
+  --color-rose-soft: #fff5f6;
+  --color-rose-dark: #be123c;
+
+  /* ===================================================
+     THEME BACKGROUND
+     =================================================== */
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-soft: #fffdf7;
+  --bg-panel: rgba(255, 255, 255, 0.96);
+
+  /* ===================================================
+     GRADIENTS
+     =================================================== */
+
+  --gradient-brand:
+    linear-gradient(
+      135deg,
+      #fff3a3 0%,
+      #ffffff 48%,
+      #ffe1e7 100%
+    );
+
+  --gradient-yellow-rose:
+    linear-gradient(
+      135deg,
+      #fff5b8 0%,
+      #ffffff 50%,
+      #ffe0e7 100%
+    );
+
+  --gradient-rose:
+    linear-gradient(
+      135deg,
+      #fff5f7,
+      #ffe4e9
+    );
+
+  --gradient-yellow:
+    linear-gradient(
+      135deg,
+      #fffbea,
+      #fff3a3
+    );
+
+  /* ===================================================
+     GLOW COLORS
+     =================================================== */
+
+  --glow-yellow:
+    rgba(250, 204, 21, 0.14);
+
+  --glow-yellow-strong:
+    rgba(250, 204, 21, 0.22);
+
+  --glow-rose:
+    rgba(244, 63, 94, 0.11);
+
+  --glow-rose-strong:
+    rgba(244, 63, 94, 0.18);
+
+  /* ===================================================
+     SHADOWS
+     =================================================== */
+
+  --shadow-small:
+    0 6px 20px rgba(20, 20, 20, 0.05);
+
+  --shadow-medium:
+    0 14px 40px rgba(20, 20, 20, 0.07);
+
+  --shadow-large:
+    0 24px 70px rgba(20, 20, 20, 0.09);
+
+  --shadow-rose:
+    0 18px 50px rgba(244, 63, 94, 0.08);
+
+  --shadow-yellow:
+    0 18px 50px rgba(250, 204, 21, 0.08);
+
+  /* ===================================================
+     RADIUS
+     =================================================== */
+
+  --radius-small: 10px;
+  --radius-medium: 14px;
+  --radius-large: 20px;
+  --radius-xl: 26px;
+  --radius-xxl: 32px;
+  --radius-round: 999px;
+
+  /* ===================================================
+     SPACING
+     =================================================== */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 56px;
+  --space-12: 64px;
+  --space-13: 80px;
+
+  /* ===================================================
+     TYPOGRAPHY
+     =================================================== */
+
+  --font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 15px;
+  --font-size-lg: 17px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 42px;
+  --font-size-5xl: 54px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 650;
+  --font-weight-bold: 750;
+  --font-weight-heavy: 850;
+  --font-weight-black: 900;
+
+  /* ===================================================
+     LAYOUT
+     =================================================== */
+
+  --sidebar-width: 260px;
+  --sidebar-mobile-height: 72px;
+
+  --content-max-width: 1500px;
+
+  --header-height: 72px;
+
+  /* ===================================================
+     TRANSITIONS
+     =================================================== */
+
+  --transition-fast:
+    0.15s ease;
+
+  --transition-normal:
+    0.25s ease;
+
+  --transition-slow:
+    0.4s ease;
+
+  /* ===================================================
+     Z-INDEX
+     =================================================== */
+
+  --z-background: -10;
+  --z-base: 1;
+  --z-content: 10;
+  --z-sidebar: 100;
+  --z-header: 200;
+  --z-dropdown: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+
+  /* ===================================================
+     SETTINGS SUPPORT
+     =================================================== */
+
+  --settings-accent: var(--color-rose);
+  --settings-accent-secondary: var(--color-yellow);
+
+  --settings-background: var(--bg-primary);
+  --settings-surface: var(--bg-panel);
+
+  --settings-text: var(--color-text);
+  --settings-muted: var(--color-text-secondary);
+
+  --settings-border: var(--color-border);
+
+  /* ===================================================
+     STATUS COLORS
+     =================================================== */
+
+  --status-success: #16a34a;
+  --status-warning: #d97706;
+  --status-error: #dc2626;
+  --status-info: #2563eb;
+
+  /* ===================================================
+     FORM COLORS
+     =================================================== */
+
+  --input-background: #ffffff;
+  --input-border: rgba(20, 20, 20, 0.12);
+  --input-border-focus: var(--color-rose);
+
+  --input-placeholder: #999999;
+
+  /* ===================================================
+     CARD SYSTEM
+     =================================================== */
+
+  --card-background: #ffffff;
+  --card-border: rgba(20, 20, 20, 0.07);
+  --card-radius: 24px;
+  --card-shadow: var(--shadow-medium);
+
+  /* ===================================================
+     BUTTON SYSTEM
+     =================================================== */
+
+  --button-primary-background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f43f5e
+    );
+
+  --button-primary-text: #171717;
+
+  --button-secondary-background: #ffffff;
+  --button-secondary-text: #252525;
+
+  --button-border: rgba(20, 20, 20, 0.10);
+
+  /* ===================================================
+     WORKING TOOL FOUNDATION
+     =================================================== */
+
+  --tool-background: #ffffff;
+  --tool-panel: #fafafa;
+  --tool-panel-border: rgba(20, 20, 20, 0.08);
+
+  --tool-editor-background: #ffffff;
+  --tool-editor-text: #171717;
+
+  --tool-console-background: #fafafa;
+  --tool-console-text: #252525;
+
+  --tool-sidebar-background: #ffffff;
+
+  /* ===================================================
+     MOBILE SAFE AREA
+     =================================================== */
+
+  --safe-bottom:
+    env(safe-area-inset-bottom, 0px);
+}
+
+/* =====================================================
+   DARK THEME SUPPORT
+   ===================================================== */
+
+[data-theme="dark"] {
+  --color-white: #111111;
+  --color-black: #ffffff;
+
+  --color-text: #f5f5f5;
+  --color-text-secondary: #c4c4c4;
+  --color-text-muted: #8e8e8e;
+
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+
+  --bg-primary: #111111;
+  --bg-secondary: #181818;
+  --bg-soft: #1d1d1d;
+  --bg-panel: rgba(25, 25, 25, 0.96);
+
+  --card-background: #191919;
+  --card-border: rgba(255, 255, 255, 0.09);
+
+  --input-background: #191919;
+  --input-border: rgba(255, 255, 255, 0.12);
+
+  --tool-background: #111111;
+  --tool-panel: #181818;
+  --tool-panel-border: rgba(255, 255, 255, 0.10);
+
+  --tool-editor-background: #111111;
+  --tool-editor-text: #f5f5f5;
+
+  --tool-console-background: #151515;
+  --tool-console-text: #eeeeee;
+
+  --tool-sidebar-background: #151515;
+
+  --button-secondary-background: #1c1c1c;
+  --button-secondary-text: #ffffff;
+
+  --gradient-brand:
+    linear-gradient(
+      135deg,
+      #4a4200,
+      #1c1c1c,
+      #4b1723
+    );
+}
+
+/* =====================================================
+   HIGH CONTRAST SUPPORT
+   ===================================================== */
+
+[data-contrast="high"] {
+  --color-text: #000000;
+  --color-text-secondary: #222222;
+
+  --color-border:
+    rgba(0, 0, 0, 0.25);
+
+  --card-border:
+    rgba(0, 0, 0, 0.20);
+
+  --input-border:
+    rgba(0, 0, 0, 0.30);
+}
+
+/* =====================================================
+   COMPACT MODE
+   ===================================================== */
+
+[data-density="compact"] {
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 28px;
+
+  --card-radius: 18px;
+}
+
+/* =====================================================
+   LARGE / COMFORTABLE MODE
+   ===================================================== */
+
+[data-density="comfortable"] {
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 30px;
+  --space-7: 36px;
+  --space-8: 42px;
+
+  --card-radius: 28px;
+}

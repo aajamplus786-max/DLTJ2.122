@@ -1,0 +1,571 @@
+/* =====================================================
+   DLTJ2.1
+   COMMON SIDEBAR
+   FILE: src/styles/sidebar.css
+   ===================================================== */
+
+/* =====================================================
+   ROOT LAYOUT
+   ===================================================== */
+
+.dltj-main-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #ffffff;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.common-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 18px 14px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fffdf8 48%,
+      #fff8fa 100%
+    );
+
+  border-right: 1px solid #f1d9a5;
+
+  box-shadow:
+    8px 0 30px rgba(245, 180, 60, 0.08);
+
+  overflow-y: auto;
+}
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.common-sidebar-brand {
+  width: 100%;
+
+  margin-bottom: 28px;
+}
+
+.common-brand-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 7px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.common-brand-logo {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd84d,
+      #ffb52e 45%,
+      #f28a9b
+    );
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 900;
+
+  box-shadow:
+    0 7px 20px rgba(255, 190, 60, 0.25),
+    0 4px 18px rgba(242, 138, 155, 0.18);
+}
+
+.common-brand-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.common-brand-text strong {
+  color: #30251f;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.04em;
+
+  line-height: 1.25;
+}
+
+.common-brand-text small {
+  color: #a47b3a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.common-sidebar-navigation {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+/* =====================================================
+   NAVIGATION BUTTON
+   ===================================================== */
+
+.common-sidebar-link {
+  position: relative;
+
+  width: 100%;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 13px;
+
+  border: 1px solid transparent;
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: #756b67;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.common-sidebar-link:hover {
+  transform: translateX(3px);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 216, 77, 0.18),
+      rgba(242, 138, 155, 0.10)
+    );
+
+  color: #3c302c;
+
+  border-color: rgba(244, 190, 65, 0.20);
+}
+
+/* =====================================================
+   ACTIVE
+   ===================================================== */
+
+.common-sidebar-link.active {
+  transform: translateX(3px);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(255, 214, 66, 0.30),
+      rgba(242, 138, 155, 0.20)
+    );
+
+  color: #2e2521;
+
+  border-color:
+    rgba(238, 178, 57, 0.35);
+
+  box-shadow:
+    0 7px 22px rgba(241, 181, 65, 0.12),
+    0 5px 18px rgba(239, 133, 153, 0.08);
+}
+
+/* =====================================================
+   ICON
+   ===================================================== */
+
+.common-sidebar-icon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #fff9e8;
+
+  color: #c98c23;
+
+  font-size: 15px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.common-sidebar-link:hover
+.common-sidebar-icon {
+  background: #fff0bc;
+  color: #a96d0e;
+}
+
+.common-sidebar-link.active
+.common-sidebar-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #ffd84d,
+      #f39aa9
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(240, 169, 75, 0.18);
+}
+
+/* =====================================================
+   LABEL
+   ===================================================== */
+
+.common-sidebar-label {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   ACTIVE DOT
+   ===================================================== */
+
+.common-sidebar-active-dot {
+  width: 6px;
+  height: 6px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #e99472;
+
+  box-shadow:
+    0 0 9px rgba(233, 148, 114, 0.55);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.common-sidebar-footer {
+  margin-top: 20px;
+
+  padding: 13px 8px 3px;
+
+  border-top: 1px solid #f1e2c5;
+}
+
+.common-sidebar-status {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #8d817b;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.common-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #63b889;
+
+  box-shadow:
+    0 0 8px rgba(99, 184, 137, 0.45);
+}
+
+.common-sidebar-version {
+  margin-top: 7px;
+
+  color: #b6a79e;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.dltj-main-content {
+  min-width: 0;
+
+  width: calc(100% - 250px);
+
+  min-height: 100vh;
+
+  margin-left: 250px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .common-sidebar {
+    width: 205px;
+  }
+
+  .dltj-main-content {
+    width: calc(100% - 205px);
+
+    margin-left: 205px;
+  }
+
+  .common-brand-text strong {
+    font-size: 10px;
+  }
+
+  .common-sidebar-link {
+    min-height: 45px;
+
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   PHONE
+   ===================================================== */
+
+@media (max-width: 650px) {
+
+  .common-sidebar {
+    position: fixed;
+
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 72px;
+
+    min-height: 72px;
+
+    padding: 6px 5px;
+
+    display: block;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-top: 1px solid #efd9a6;
+    border-right: 0;
+
+    box-shadow:
+      0 -8px 30px rgba(241, 177, 68, 0.12);
+
+    overflow: visible;
+  }
+
+  /* Hide desktop brand on phone */
+
+  .common-sidebar-brand,
+  .common-sidebar-footer {
+    display: none;
+  }
+
+  /* Bottom navigation */
+
+  .common-sidebar-navigation {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr));
+
+    gap: 2px;
+
+    align-items: stretch;
+  }
+
+  .common-sidebar-link {
+    min-width: 0;
+    min-height: 0;
+
+    height: 60px;
+
+    padding: 4px 2px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    border-radius: 11px;
+
+    transform: none;
+
+    font-size: 8px;
+
+    text-align: center;
+  }
+
+  .common-sidebar-link:hover,
+  .common-sidebar-link.active {
+    transform: none;
+  }
+
+  .common-sidebar-icon {
+    width: 27px;
+    height: 27px;
+
+    font-size: 14px;
+
+    border-radius: 8px;
+  }
+
+  .common-sidebar-label {
+    width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+
+  .common-sidebar-active-dot {
+    position: absolute;
+
+    right: 50%;
+    bottom: 2px;
+
+    width: 4px;
+    height: 4px;
+
+    margin: 0;
+
+    transform: translateX(50%);
+  }
+
+  .dltj-main-content {
+    width: 100%;
+
+    margin-left: 0;
+
+    min-height: calc(100vh - 72px);
+
+    padding-bottom: 72px;
+
+    box-sizing: border-box;
+  }
+}
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+  .common-sidebar {
+    height: 68px;
+    min-height: 68px;
+  }
+
+  .common-sidebar-link {
+    height: 56px;
+
+    font-size: 7px;
+  }
+
+  .common-sidebar-icon {
+    width: 25px;
+    height: 25px;
+
+    font-size: 13px;
+  }
+
+  .dltj-main-content {
+    min-height: calc(100vh - 68px);
+
+    padding-bottom: 68px;
+  }
+}

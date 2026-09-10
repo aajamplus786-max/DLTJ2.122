@@ -1,0 +1,200 @@
+===== ALL BACKEND IMPORTS =====
+src\app.ts:12:  } from "express";
+src\app.ts:14:  import executionRoutes from "./routes/executionRoutes";
+src\app.ts:15:  import projectRoutes from "./routes/projectRoutes";
+src\app.ts:16:  import databaseRoutes from "./routes/databaseRoutes";
+src\app.ts:17:  import springRoutes from "./routes/springRoutes";
+src\app.ts:18:  import workspaceRoutes from "./routes/workspaceRoutes";
+src\app.ts:20:  import { AppError } from "./utils/errors";
+src\app.ts:21:  import logger from "./utils/logger";
+src\config\database.ts:8:import mysql from "mysql2/promise";
+src\config\database.ts:10:import { env } from "./env";
+src\controllers\databaseController.ts:11:  } from "express";
+src\controllers\databaseController.ts:18:  } from "../services/databaseService";
+src\controllers\deploymentController.ts:11:} from "express";
+src\controllers\deploymentController.ts:17:} from "../services/deploymentService";
+src\controllers\diagnosticController.ts:11:  } from "express";
+src\controllers\diagnosticController.ts:15:  } from "../services/diagnosticService";
+src\controllers\executionController.ts:11:  } from "express";
+src\controllers\executionController.ts:16:  } from "../services/executionService";
+src\controllers\fileController.ts:12:  } from "express";
+src\controllers\fileController.ts:27:  } from "../services/fileService";
+src\controllers\projectController.ts:11:  } from "express";
+src\controllers\projectController.ts:20:  } from "../services/projectService";
+src\controllers\shareController.ts:11:} from "express";
+src\controllers\shareController.ts:17:} from "../services/shareService";
+src\controllers\springController.ts:11:  } from "express";
+src\controllers\springController.ts:18:  } from "../services/springService";
+src\controllers\workspaceController.ts:12:  } from "express";
+src\controllers\workspaceController.ts:22:  } from "../services/workspaceService";
+src\middleware\rateLimitMiddleware.ts:12:  } from "express";
+src\middleware\validationMiddleware.ts:12:  } from "express";
+src\routes\authRoutes.ts:10:} from "express";
+src\routes\databaseRoutes.ts:10:  } from "express";
+src\routes\databaseRoutes.ts:14:  } from "../controllers/projectController";
+src\routes\deploymentRoutes.ts:10:} from "express";
+src\routes\deploymentRoutes.ts:16:} from "../controllers/deploymentController";
+src\routes\fileRoutes.ts:11:  } from "express";
+src\routes\fileRoutes.ts:28:  } from "../controllers/fileController";
+src\routes\shareRoutes.ts:10:} from "express";
+src\routes\shareRoutes.ts:16:} from "../controllers/shareController";
+src\routes\springRoutes.ts:10:  } from "express";
+src\routes\workspaceRoutes.ts:10:  } from "express";
+src\routes\workspaceRoutes.ts:14:  } from "../config/database";
+src\routes\workspaceRoutes.ts:33:            FROM workspace_files
+src\runners\cppRunner.ts:11:  } from "../services/executionService";
+src\runners\cRunner.ts:11:  } from "../services/executionService";
+src\runners\htmlRunner.ts:11:  } from "../services/executionService";
+src\runners\htmlRunner.ts:50:            `HTML preview prepared from ${file.name}.`,
+src\runners\javaRunner.ts:11:  } from "../services/executionService";
+src\runners\javascriptRunner.ts:11:  } from "../services/executionService";
+src\runners\mysqlRunner.ts:11:  } from "../services/databaseService";
+src\runners\pythonRunner.ts:11:  } from "../services/executionService";
+src\runners\reactRunner.ts:11:  } from "../services/executionService";
+src\runners\springRunner.ts:25:   * sandbox layer from Batch 8 before any Maven/Gradle
+src\runners\typescriptRunner.ts:11:  } from "../services/executionService";
+src\security\tokenSecurity.ts:11:  } from "crypto";
+src\services\databaseService.ts:10:  } from "mysql2/promise";
+src\services\databaseService.ts:12:  import mysql from "mysql2/promise";
+src\services\executionService.ts:53:} from "../runners/htmlRunner";
+src\services\executionService.ts:57:} from "../runners/javascriptRunner";
+src\services\executionService.ts:61:} from "../runners/pythonRunner";
+src\services\executionService.ts:65:} from "../runners/cRunner";
+src\services\executionService.ts:69:} from "../runners/cppRunner";
+src\services\executionService.ts:73:} from "../runners/javaRunner";
+src\services\executionService.ts:77:} from "../runners/typescriptRunner";
+src\services\executionService.ts:81:} from "../runners/reactRunner";
+src\services\fileService.ts:13:  } from "../models/WorkspaceFile";
+src\services\fileService.ts:17:  } from "../models/WorkspaceFolder";
+src\services\fileService.ts:178:    return Array.from(
+src\services\fileService.ts:350:    return Array.from(
+src\services\projectService.ts:8:import { randomUUID } from "node:crypto";
+src\services\shareService.ts:11:} from "node:crypto";
+src\services\shareService.ts:87:    Array.from(
+src\services\springService.ts:8:import crypto from "node:crypto";
+src\services\springService.ts:9:import path from "node:path";
+src\services\workspaceService.ts:15:  } from "./fileService";
+src\utils\paths.ts:8:import path from "node:path";
+src\utils\process.ts:11:  } from "node:child_process";
+
+===== REQUIRE / IMPORT =====
+
+===== PROCESS / EXECUTION =====
+src\app.ts:14:  import executionRoutes from "./routes/executionRoutes";
+src\app.ts:89:  // WORKING TOOL — EXECUTION
+src\app.ts:93:    "/api/execution",
+src\app.ts:94:    executionRoutes,
+src\controllers\databaseController.ts:15:    executeQuery,
+src\controllers\databaseController.ts:51:      await executeQuery(
+src\controllers\executionController.ts:4:// FILE: server/src/controllers/executionController.ts
+src\controllers\executionController.ts:14:    executeCode,
+src\controllers\executionController.ts:15:    getSupportedExecutionLanguages,
+src\controllers\executionController.ts:16:  } from "../services/executionService";
+src\controllers\executionController.ts:18:  export async function executeCodeController(
+src\controllers\executionController.ts:49:        await executeCode({
+src\controllers\executionController.ts:63:          : "Execution request failed.";
+src\controllers\executionController.ts:79:        getSupportedExecutionLanguages(),
+src\middleware\rateLimitMiddleware.ts:51:  export function executionRateLimit(
+src\middleware\rateLimitMiddleware.ts:86:          "Too many execution requests. Please try again later.",
+src\middleware\validationMiddleware.ts:17:  export function validateExecutionRequest(
+src\middleware\validationMiddleware.ts:32:          "Execution language is required.",
+src\middleware\validationMiddleware.ts:43:          "Execution files are required.",
+src\middleware\validationMiddleware.ts:61:          "Execution request is too large.",
+src\middleware\validationMiddleware.ts:79:            "Invalid execution file.",
+src\routes\workspaceRoutes.ts:83:          await databasePool.execute(
+src\runners\cppRunner.ts:9:    ExecutionRequest,
+src\runners\cppRunner.ts:10:    ExecutionResult,
+src\runners\cppRunner.ts:11:  } from "../services/executionService";
+src\runners\cppRunner.ts:14:    request: ExecutionRequest,
+src\runners\cppRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\cRunner.ts:9:    ExecutionRequest,
+src\runners\cRunner.ts:10:    ExecutionResult,
+src\runners\cRunner.ts:11:  } from "../services/executionService";
+src\runners\cRunner.ts:14:    request: ExecutionRequest,
+src\runners\cRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\htmlRunner.ts:9:    ExecutionRequest,
+src\runners\htmlRunner.ts:10:    ExecutionResult,
+src\runners\htmlRunner.ts:11:  } from "../services/executionService";
+src\runners\htmlRunner.ts:14:    request: ExecutionRequest,
+src\runners\htmlRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\javaRunner.ts:9:    ExecutionRequest,
+src\runners\javaRunner.ts:10:    ExecutionResult,
+src\runners\javaRunner.ts:11:  } from "../services/executionService";
+src\runners\javaRunner.ts:14:    request: ExecutionRequest,
+src\runners\javaRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\javascriptRunner.ts:9:    ExecutionRequest,
+src\runners\javascriptRunner.ts:10:    ExecutionResult,
+src\runners\javascriptRunner.ts:11:  } from "../services/executionService";
+src\runners\javascriptRunner.ts:14:    request: ExecutionRequest,
+src\runners\javascriptRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\javascriptRunner.ts:53:            `JavaScript source accepted for sandbox execution: ${file.name}.`,
+src\runners\mysqlRunner.ts:9:    executeQuery,
+src\runners\mysqlRunner.ts:35:    return executeQuery(
+src\runners\pythonRunner.ts:9:    ExecutionRequest,
+src\runners\pythonRunner.ts:10:    ExecutionResult,
+src\runners\pythonRunner.ts:11:  } from "../services/executionService";
+src\runners\pythonRunner.ts:14:    request: ExecutionRequest,
+src\runners\pythonRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\pythonRunner.ts:47:            `Python source prepared for secure sandbox execution: ${file.name}.`,
+src\runners\reactRunner.ts:9:    ExecutionRequest,
+src\runners\reactRunner.ts:10:    ExecutionResult,
+src\runners\reactRunner.ts:11:  } from "../services/executionService";
+src\runners\reactRunner.ts:14:    request: ExecutionRequest,
+src\runners\reactRunner.ts:15:  ): Promise<ExecutionResult> {
+src\runners\springRunner.ts:24:   * Spring execution must go through the security/
+src\runners\springRunner.ts:28:   * This runner therefore exposes a safe execution contract
+src\runners\springRunner.ts:29:   * instead of directly spawning arbitrary commands.
+src\runners\springRunner.ts:76:        "Spring execution request accepted for sandbox validation.",
+src\runners\typescriptRunner.ts:9:    ExecutionRequest,
+src\runners\typescriptRunner.ts:10:    ExecutionResult,
+src\runners\typescriptRunner.ts:11:  } from "../services/executionService";
+src\runners\typescriptRunner.ts:14:    request: ExecutionRequest,
+src\runners\typescriptRunner.ts:15:  ): Promise<ExecutionResult> {
+src\security\sandbox.ts:11:    allowProcessSpawn: boolean;
+src\security\sandbox.ts:12:    maxExecutionTimeMs: number;
+src\security\sandbox.ts:24:    allowProcessSpawn: false,
+src\security\sandbox.ts:25:    maxExecutionTimeMs: 5000,
+src\security\sandbox.ts:33:      policy.maxExecutionTimeMs <= 0
+src\security\sandbox.ts:38:          "Execution time limit must be greater than zero.",
+src\security\sandbox.ts:58:          "Network access is disabled for public code execution.",
+src\security\sandbox.ts:63:      policy.allowProcessSpawn
+src\security\sandbox.ts:68:          "Unrestricted process spawning is disabled.",
+src\security\sandbox.ts:84:      allowProcessSpawn: false,
+src\security\tokenSecurity.ts:13:  export interface ExecutionToken {
+src\security\tokenSecurity.ts:19:  export function generateExecutionToken(
+src\security\tokenSecurity.ts:23:    token: ExecutionToken;
+src\security\tokenSecurity.ts:52:  export function verifyExecutionToken(
+src\security\tokenSecurity.ts:54:    token: ExecutionToken,
+src\services\databaseService.ts:62:  export async function executeQuery(
+src\services\databaseService.ts:114:            : "Query execution failed.",
+src\services\databaseService.ts:125:      await executeQuery(
+src\services\databaseService.ts:151:      await executeQuery(
+src\services\executionService.ts:4:// FILE: server/src/services/executionService.ts
+src\services\executionService.ts:8:export type ExecutionLanguage =
+src\services\executionService.ts:18:export interface ExecutionFile {
+src\services\executionService.ts:24:export interface ExecutionRequest {
+src\services\executionService.ts:26:  files: ExecutionFile[];
+src\services\executionService.ts:31:export interface ExecutionMessage {
+src\services\executionService.ts:42:export interface ExecutionResult {
+src\services\executionService.ts:45:  messages: ExecutionMessage[];
+src\services\executionService.ts:83:type ExecutionHandler = (
+src\services\executionService.ts:84:  request: ExecutionRequest,
+src\services\executionService.ts:85:) => Promise<ExecutionResult>;
+src\services\executionService.ts:88:  ExecutionLanguage,
+src\services\executionService.ts:89:  ExecutionHandler
+src\services\executionService.ts:101:export function getSupportedExecutionLanguages(): string[] {
+src\services\executionService.ts:107:): ExecutionLanguage | null {
+src\services\executionService.ts:116:    return normalized as ExecutionLanguage;
+src\services\executionService.ts:122:export async function executeCode(
+src\services\executionService.ts:123:  request: ExecutionRequest,
+src\services\executionService.ts:124:): Promise<ExecutionResult> {
+src\services\executionService.ts:141:            `Unsupported execution language: ${request.language}`,
+src\services\executionService.ts:145:        `Unsupported execution language: ${request.language}`,
+src\services\executionService.ts:159:            "Execution files must be an array.",
+src\services\executionService.ts:163:        "Execution files must be an array.",
+src\services\executionService.ts:185:        : "Execution failed.";
+src\services\springService.ts:93:   * Actual Maven/Gradle process execution is
+src\services\springService.ts:97:   * the command before a public execution environment
+src\utils\process.ts:9:    spawn,
+src\utils\process.ts:11:  } from "node:child_process";
+src\utils\process.ts:38:        child = spawn(

@@ -1,0 +1,31 @@
+/* =====================================================
+   DLTJ2.1
+   FILE: src/setting/accessibility.css
+   ACCESSIBILITY
+===================================================== */
+
+html[data-large-text="true"] {
+  font-size: 18px;
+}
+
+html[data-large-text="true"] body {
+  line-height: 1.6;
+}
+
+html[data-reduce-motion="true"] *,
+html[data-reduce-motion="true"] *::before,
+html[data-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-compact="true"] .settings-page {
+  padding: 20px;
+}
+
+html[data-compact="true"] .setting-row {
+  min-height: 58px;
+  padding: 11px 16px;
+}

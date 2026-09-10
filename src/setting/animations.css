@@ -1,0 +1,45 @@
+/* =====================================================
+   DLTJ2.1
+   FILE: src/setting/animations.css
+   UI ANIMATIONS
+===================================================== */
+
+@keyframes dltjFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dltjGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px var(--rose-glow);
+  }
+
+  50% {
+    box-shadow:
+      0 0 24px var(--rose-glow),
+      0 0 18px var(--yellow-glow);
+  }
+}
+
+.dltj-fade-in {
+  animation: dltjFadeIn 0.35s ease both;
+}
+
+.dltj-glow {
+  animation: dltjGlow 2.5s ease-in-out infinite;
+}
+
+html[data-ui-effects="false"] *,
+html[data-ui-effects="false"] *::before,
+html[data-ui-effects="false"] *::after {
+  animation: none !important;
+  transition: none !important;
+}

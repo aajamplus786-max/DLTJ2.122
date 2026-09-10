@@ -1,0 +1,182 @@
+===== Technology.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// TECHNOLOGY MODEL
+// FILE: server/src/models/Technology.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface Technology {
+    id: string;
+    name: string;
+    section: string | null;
+    displayOrder: number;
+    isActive: boolean;
+    createdAt: string;
+    updatedAt: string;
+}
+===== Chapter.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// CHAPTER MODEL
+// FILE: server/src/models/Chapter.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface Chapter {
+    id: string;
+    technologyId: string;
+    chapterNumber: number;
+    title: string;
+    description: string | null;
+    displayOrder: number;
+    isActive: boolean;
+    createdAt: string;
+    updatedAt: string;
+}
+===== Lesson.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// LESSON MODEL
+// FILE: server/src/models/Lesson.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface Lesson {
+    id: string;
+    chapterId: string;
+    lessonNumber: number;
+    title: string;
+    content: string;
+    displayOrder: number;
+    isActive: boolean;
+    createdAt: string;
+    updatedAt: string;
+}
+===== Question.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// QUESTION MODEL
+// FILE: server/src/models/Question.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface Question {
+    id: string;
+    technologyId: string;
+    chapterId: string | null;
+
+    questionType: string;
+
+    questionText: string;
+
+    optionA: string | null;
+    optionB: string | null;
+    optionC: string | null;
+    optionD: string | null;
+
+    correctAnswer: string;
+
+    explanation: string | null;
+
+    marks: number;
+
+    displayOrder: number;
+
+    isActive: boolean;
+
+    createdAt: string;
+    updatedAt: string;
+}
+===== Test.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// TEST MODEL
+// FILE: server/src/models/Test.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface Test {
+    id: string;
+    technologyId: string;
+
+    title: string;
+
+    testType: string;
+
+    startChapter: number | null;
+    endChapter: number | null;
+
+    passPercentage: number;
+
+    displayOrder: number;
+
+    isActive: boolean;
+
+    createdAt: string;
+    updatedAt: string;
+}
+===== TestQuestion.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// TEST QUESTION MODEL
+// FILE: server/src/models/TestQuestion.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface TestQuestion {
+    id: string;
+
+    testId: string;
+    questionId: string;
+
+    marks: number;
+
+    displayOrder: number;
+
+    createdAt: string;
+}
+===== UserProgress.ts =====
+// =====================================================
+// DLTJ2.10
+// DYNAMIC LEARNING SYSTEM
+// USER PROGRESS MODEL
+// FILE: server/src/models/UserProgress.ts
+// DATE: 2026-09-04
+// CREATE BY: aajamthurinji
+// =====================================================
+
+export interface UserProgress {
+    id: string;
+
+    userId: string;
+    technologyId: string;
+
+    chapterId: string | null;
+    lessonId: string | null;
+    testId: string | null;
+
+    progressType: string;
+
+    completed: boolean;
+
+    score: number | null;
+    passed: boolean | null;
+
+    completedAt: string | null;
+
+    createdAt: string;
+    updatedAt: string;
+}

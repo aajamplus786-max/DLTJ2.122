@@ -1,0 +1,936 @@
+/* =====================================================
+   DLTJ2.1
+   APPLICATION GLOBAL STYLE
+   FILE: src/App.css
+
+   THEME:
+   WHITE + ROSE + BLUE
+   Modern Glass UI
+   Soft Animated Glow
+   NO YELLOW
+===================================================== */
+
+/* =====================================================
+   APP ROOT
+===================================================== */
+
+.dltj-app {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  color: #171717;
+
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   ROSE BACKGROUND GLOW
+===================================================== */
+
+.dltj-app::before {
+  content: "";
+
+  position: fixed;
+
+  width: 650px;
+  height: 650px;
+
+  left: -300px;
+  top: -220px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 63, 94, 0.18) 0%,
+      rgba(244, 63, 94, 0.10) 28%,
+      rgba(244, 63, 94, 0.04) 50%,
+      transparent 72%
+    );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  animation:
+    dltjRoseMove
+    12s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* =====================================================
+   BLUE BACKGROUND GLOW
+===================================================== */
+
+.dltj-app::after {
+  content: "";
+
+  position: fixed;
+
+  width: 700px;
+  height: 700px;
+
+  right: -320px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.18) 0%,
+      rgba(59, 130, 246, 0.10) 28%,
+      rgba(59, 130, 246, 0.04) 50%,
+      transparent 72%
+    );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  animation:
+    dltjBlueMove
+    13s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+/* =====================================================
+   GLOW ANIMATION
+===================================================== */
+
+@keyframes dltjRoseMove {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(0.92);
+  }
+
+  50% {
+    transform:
+      translate3d(55px, 50px, 0)
+      scale(1.08);
+  }
+
+  100% {
+    transform:
+      translate3d(20px, 100px, 0)
+      scale(1);
+  }
+}
+
+@keyframes dltjBlueMove {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(0.94);
+  }
+
+  50% {
+    transform:
+      translate3d(-55px, -45px, 0)
+      scale(1.08);
+  }
+
+  100% {
+    transform:
+      translate3d(-20px, -90px, 0)
+      scale(1);
+  }
+}
+
+/* =====================================================
+   CONTENT ABOVE GLOW
+===================================================== */
+
+.dltj-app > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================================================
+   COMMON PAGE
+===================================================== */
+
+.dltj-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  color: #171717;
+}
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.dltj-page-content {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  padding:
+    35px
+    40px
+    70px;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.dltj-page-header {
+  margin-bottom: 28px;
+}
+
+.dltj-page-header h1,
+.dltj-page-header h2 {
+  margin: 0;
+
+  color: #171717;
+
+  font-weight: 900;
+
+  letter-spacing: -0.7px;
+}
+
+.dltj-page-header p {
+  margin:
+    8px 0 0;
+
+  color: #737373;
+
+  line-height: 1.6;
+}
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.dltj-card {
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 38px
+    rgba(15, 23, 42, 0.06);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+    transform 0.30s ease,
+    box-shadow 0.30s ease,
+    border-color 0.30s ease;
+}
+
+.dltj-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(244, 63, 94, 0.18);
+
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.09),
+
+    0 0 30px
+    rgba(59, 130, 246, 0.07);
+}
+
+/* =====================================================
+   ROSE GLOW
+===================================================== */
+
+.rose-glow {
+  box-shadow:
+    0 0 25px
+    rgba(244, 63, 94, 0.20);
+}
+
+/* =====================================================
+   BLUE GLOW
+===================================================== */
+
+.blue-glow {
+  box-shadow:
+    0 0 25px
+    rgba(59, 130, 246, 0.20);
+}
+
+/* =====================================================
+   MIXED GLOW
+===================================================== */
+
+.rose-blue-glow {
+  box-shadow:
+    0 0 30px
+    rgba(244, 63, 94, 0.14),
+
+    0 0 45px
+    rgba(59, 130, 246, 0.12);
+}
+
+/* =====================================================
+   ROSE BUTTON
+===================================================== */
+
+button.rose,
+.rose-button {
+  background:
+    linear-gradient(
+      135deg,
+      #fb7185 0%,
+      #e11d68 48%,
+      #be123c 100%
+    );
+
+  color: #ffffff;
+
+  border-color:
+    rgba(190, 18, 60, 0.40);
+
+  box-shadow:
+    0 8px 24px
+    rgba(225, 29, 72, 0.20);
+}
+
+button.rose:hover:not(:disabled),
+.rose-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #fda4af,
+      #ec4899,
+      #db2777
+    );
+
+  box-shadow:
+    0 0 30px
+    rgba(225, 29, 72, 0.38);
+}
+
+/* =====================================================
+   BLUE BUTTON
+===================================================== */
+
+button.blue,
+.blue-button {
+  background:
+    linear-gradient(
+      135deg,
+      #60a5fa,
+      #3b82f6,
+      #2563eb
+    );
+
+  color: #ffffff;
+
+  border-color:
+    rgba(37, 99, 235, 0.40);
+
+  box-shadow:
+    0 8px 24px
+    rgba(37, 99, 235, 0.20);
+}
+
+button.blue:hover:not(:disabled),
+.blue-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #93c5fd,
+      #60a5fa,
+      #2563eb
+    );
+
+  box-shadow:
+    0 0 30px
+    rgba(37, 99, 235, 0.38);
+}
+
+/* =====================================================
+   TOOL LAYOUT
+===================================================== */
+
+.tool-layout {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  color: #171717;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   TOOL TITLE
+===================================================== */
+
+.tool-layout-title {
+  height: 44px;
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 18px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  border-bottom:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  color: #242424;
+
+  box-shadow:
+    0 3px 18px
+    rgba(59, 130, 246, 0.05);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+/* =====================================================
+   TOOL MENU
+===================================================== */
+
+.tool-menu {
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 6px 10px;
+
+  background:
+    rgba(255, 255, 255, 0.90);
+
+  border-bottom:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  backdrop-filter:
+    blur(15px);
+
+  overflow-x: auto;
+}
+
+.tool-menu button {
+  padding: 7px 14px;
+
+  white-space: nowrap;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fb7185,
+      #e11d68,
+      #3b82f6
+    );
+
+  color: #ffffff;
+}
+
+/* =====================================================
+   TOOL WORKSPACE
+===================================================== */
+
+.tool-workspace {
+  flex: 1;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    225px
+    minmax(0, 1fr)
+    310px;
+
+  background:
+    rgba(255, 255, 255, 0.90);
+}
+
+/* =====================================================
+   FILE EXPLORER
+===================================================== */
+
+.tool-file-explorer {
+  min-width: 0;
+
+  overflow: auto;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border-right:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    5px 0 25px
+    rgba(59, 130, 246, 0.05);
+}
+
+/* =====================================================
+   EDITOR
+===================================================== */
+
+.tool-editor-area {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+}
+
+.editor-tabs {
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  background:
+    rgba(250, 250, 250, 0.96);
+
+  border-bottom:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  overflow-x: auto;
+}
+
+.code-editor {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  background: #ffffff;
+}
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.tool-right-panel {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background:
+    rgba(255, 255, 255, 0.86);
+
+  border-left:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    -5px 0 25px
+    rgba(244, 63, 94, 0.05);
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   CONSOLE
+===================================================== */
+
+.console-panel {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  background:
+    rgba(250, 250, 250, 0.96);
+
+  border-bottom:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+}
+
+/* =====================================================
+   ERROR PANEL
+===================================================== */
+
+.error-panel {
+  min-height: 180px;
+
+  overflow: auto;
+
+  background:
+    rgba(255, 247, 249, 0.97);
+
+  border-top:
+    1px solid
+    rgba(244, 63, 94, 0.12);
+}
+
+/* =====================================================
+   TOOL BOTTOM BAR
+===================================================== */
+
+.tool-bottom-bar {
+  height: 50px;
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border-top:
+    1px solid
+    rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    0 -4px 18px
+    rgba(59, 130, 246, 0.05);
+
+  backdrop-filter:
+    blur(15px);
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.tool-bottom-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #555;
+
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    #3b82f6;
+
+  box-shadow:
+    0 0 14px
+    rgba(59, 130, 246, 0.65);
+
+  animation:
+    statusPulse
+    2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   BOTTOM ACTIONS
+===================================================== */
+
+.tool-bottom-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.tool-bottom-button {
+  padding: 7px 15px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   RUN BUTTON
+===================================================== */
+
+.tool-bottom-button.run {
+  background:
+    linear-gradient(
+      135deg,
+      #60a5fa,
+      #3b82f6,
+      #2563eb
+    );
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.35);
+
+  box-shadow:
+    0 6px 18px
+    rgba(37, 99, 235, 0.20);
+}
+
+.tool-bottom-button.run:hover {
+  box-shadow:
+    0 0 30px
+    rgba(37, 99, 235, 0.38);
+}
+
+/* =====================================================
+   SAVE / OPEN
+===================================================== */
+
+.tool-bottom-button:not(.run) {
+  background:
+    linear-gradient(
+      135deg,
+      #fb7185,
+      #e11d68,
+      #be123c
+    );
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(190, 18, 60, 0.35);
+
+  box-shadow:
+    0 6px 18px
+    rgba(225, 29, 72, 0.18);
+}
+
+.tool-bottom-button:not(.run):hover {
+  box-shadow:
+    0 0 30px
+    rgba(225, 29, 72, 0.38);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .dltj-page-content {
+    padding:
+      30px
+      28px
+      60px;
+  }
+
+  .tool-workspace {
+    grid-template-columns:
+      195px
+      minmax(0, 1fr)
+      270px;
+  }
+}
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+  .dltj-page-content {
+    padding:
+      25px
+      22px
+      50px;
+  }
+
+  .tool-workspace {
+    grid-template-columns:
+      175px
+      minmax(0, 1fr);
+  }
+
+  .tool-right-panel {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: 72px;
+  }
+
+  .dltj-page {
+    min-height:
+      calc(100vh - 72px);
+  }
+
+  .dltj-page-content {
+    padding:
+      20px
+      15px
+      40px;
+  }
+
+  .dltj-page-header {
+    margin-bottom: 20px;
+  }
+
+  .dltj-page-header h1 {
+    font-size: 25px;
+  }
+
+  .dltj-page-header h2 {
+    font-size: 21px;
+  }
+
+  .dltj-page-header p {
+    font-size: 12px;
+  }
+
+  .tool-layout {
+    height:
+      calc(100vh - 72px);
+  }
+
+  .tool-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-file-explorer {
+    display: none;
+  }
+
+  .tool-menu {
+    gap: 6px;
+
+    padding:
+      6px 8px;
+  }
+
+  .tool-menu button {
+    padding:
+      7px
+      10px;
+
+    font-size: 11px;
+  }
+
+  .tool-bottom-bar {
+    padding:
+      0 8px;
+  }
+
+  .tool-bottom-actions {
+    gap: 5px;
+  }
+
+  .tool-bottom-button {
+    padding:
+      7px
+      9px;
+
+    font-size: 11px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+  .dltj-page-content {
+    padding:
+      17px
+      12px
+      35px;
+  }
+
+  button {
+    padding:
+      8px
+      12px;
+
+    font-size: 12px;
+  }
+
+  .tool-layout-title {
+    font-size: 13px;
+  }
+}

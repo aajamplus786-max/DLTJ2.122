@@ -1,0 +1,99 @@
+
+/* =====================================================
+   DLTJ2.1
+   INDEX STYLES
+   FILE: src/index.css
+   DATE: 2026-08-31
+   ===================================================== */
+
+/* =====================================================
+   DOCUMENT FOUNDATION
+   ===================================================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+}
+
+/* =====================================================
+   APP ROOT
+   ===================================================== */
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* =====================================================
+   REMOVE DEFAULT BUTTON / FORM STYLES
+   ===================================================== */
+
+button {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   DEFAULT LINKS
+   ===================================================== */
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   TEXT RENDERING
+   ===================================================== */
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/* =====================================================
+   MOBILE TOUCH
+   ===================================================== */
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+/* =====================================================
+   HIDDEN UTILITY
+   ===================================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

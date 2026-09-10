@@ -1,0 +1,458 @@
+================= FRONTEND SRC =================
+Folder PATH listing
+Volume serial number is 7AA6-B665
+C:\USERS\ADMIN\DESKTOP\DLTJ2.10\SRC
+|   App.css
+|   App.tsx
+|   index.css
+|   main.tsx
+|   
++---assets
+|   |   hero.png
+|   |   react.svg
+|   |   vite.svg
+|   |   
+|   +---icons
+|   \---images
++---components
+|   +---admin
+|   |       ChapterForm.tsx
+|   |       LessonForm.tsx
+|   |       QuestionForm.tsx
+|   |       TechnologyForm.tsx
+|   |       TechnologyList.tsx
+|   |       TestQuestionForm.tsx
+|   |       
+|   +---auth
+|   |       AdminGuard.tsx
+|   |       AuthGuard.tsx
+|   |       LoginForm.tsx
+|   |       OTPVerification.tsx
+|   |       RegisterForm.tsx
+|   |       SecurityTimer.tsx
+|   |       
+|   +---common
+|   |       Button.tsx
+|   |       Card.tsx
+|   |       Header.tsx
+|   |       Loading.tsx
+|   |       ProtectedRoute.tsx
+|   |       Sidebar.tsx
+|   |       
+|   +---home
+|   |       CourseGrid.tsx
+|   |       DeveloperTrain.tsx
+|   |       HeroSection.tsx
+|   |       ProgressCard.tsx
+|   |       QuickActions.tsx
+|   |       TechnologyCard.tsx
+|   |       WorkingToolsCard.tsx
+|   |       
+|   +---keyboard
+|   |       MDLJKeyboard.css
+|   |       MDLJKeyboard.tsx
+|   |       
+|   +---learning
+|   |       ChapterCard.tsx
+|   |       ChapterList.tsx
+|   |       LessonContent.tsx
+|   |       LessonHeader.tsx
+|   |       LessonNavigation.tsx
+|   |       LessonSection.tsx
+|   |       ProgressBar.tsx
+|   |       TechnologyCard.tsx
+|   |       
+|   +---mysql
+|   |       MySQLConnection.tsx
+|   |       MySQLError.tsx
+|   |       MySQLExplorer.tsx
+|   |       MySQLHistory.tsx
+|   |       MySQLQueryEditor.tsx
+|   |       MySQLResultTable.tsx
+|   |       
+|   +---practice
+|   |       PracticeButton.tsx
+|   |       PracticeCard.tsx
+|   |       PracticeEditor.tsx
+|   |       
+|   +---spring
+|   |       SpringApiTester.tsx
+|   |       SpringConfig.tsx
+|   |       SpringConsole.tsx
+|   |       SpringExplorer.tsx
+|   |       SpringProjectTree.tsx
+|   |       SpringServerStatus.tsx
+|   |       
+|   +---test
+|   |       QuestionCard.tsx
+|   |       TestCard.tsx
+|   |       TestProgress.tsx
+|   |       TestResult.tsx
+|   |       TestTimer.tsx
+|   |       
+|   \---workingTools
+|       |   CodeEditor.tsx
+|       |   ConsolePanel.tsx
+|       |   DeleteDialog.tsx
+|       |   EditorStatusBar.tsx
+|       |   EditorTabs.tsx
+|       |   EditorToolbar.tsx
+|       |   ErrorPanel.tsx
+|       |   FileContextMenu.tsx
+|       |   FileDialog.tsx
+|       |   FileExplorer.tsx
+|       |   FileItem.tsx
+|       |   FileTree.tsx
+|       |   MoveDialog.tsx
+|       |   NewFileDialog.tsx
+|       |   NewFolderDialog.tsx
+|       |   OutputView.tsx
+|       |   ProblemsPanel.tsx
+|       |   RenameDialog.tsx
+|       |   RunOutput.tsx
+|       |   SearchPanel.tsx
+|       |   ShareDialog.tsx
+|       |   ToolBottomBar.tsx
+|       |   ToolHeader.tsx
+|       |   ToolLayout.tsx
+|       |   ToolMenu.tsx
+|       |   ToolSidebar.tsx
+|       |   
+|       +---deployment
+|       |       AppInstallPanel.tsx
+|       |       DeploymentPanel.tsx
+|       |       DeploymentSettings.tsx
+|       |       DeploymentStatus.tsx
+|       |       PWASettings.tsx
+|       |       
+|       +---language
+|       |       EditorAutocomplete.tsx
+|       |       EditorDiagnostics.tsx
+|       |       EditorSuggestions.tsx
+|       |       
+|       \---project
+|               ConnectionManager.tsx
+|               EnvironmentVariables.tsx
+|               ProjectConnections.tsx
+|               ProjectSettings.tsx
+|               
++---context
++---data
+|   |   practice.ts
+|   |   
+|   +---chapters
+|   |       cChapters.ts
+|   |       cppChapters.ts
+|   |       cssChapters.ts
+|   |       htmlChapters.ts
+|   |       index.ts
+|   |       javaChapters.ts
+|   |       javascriptChapters.ts
+|   |       mysqlChapters.ts
+|   |       pythonChapters.ts
+|   |       reactChapters.ts
+|   |       springChapters.ts
+|   |       typescriptChapters.ts
+|   |       
+|   +---lessons
+|   |   |   cLessons.ts
+|   |   |   cppLessons.ts
+|   |   |   cssLessons.ts
+|   |   |   htmlLessons.ts
+|   |   |   index.ts
+|   |   |   javaLessons.ts
+|   |   |   javascriptLessons.ts
+|   |   |   mysqlLessons.ts
+|   |   |   pythonLessons.ts
+|   |   |   reactLessons.ts
+|   |   |   springLessons.ts
+|   |   |   typescriptLessons.ts
+|   |   |   
+|   |   \---chapters
+|   |           mysqlChapters.ts
+|   |           
+|   +---practice
+|   |       htmlPractice.ts
+|   |       
+|   +---questions
+|   |       cppQuestions.ts
+|   |       cQuestions.ts
+|   |       cssQuestions.ts
+|   |       htmlQuestions.ts
+|   |       index.ts
+|   |       javaQuestions.ts
+|   |       javascriptQuestions.ts
+|   |       mysqlQuestions.ts
+|   |       pythonQuestions.ts
+|   |       reactQuestions.ts
+|   |       springQuestions.ts
+|   |       typescriptQuestions.ts
+|   |       
+|   +---technologies
+|   |       technologies.ts
+|   |       technologyConfig.ts
+|   |       
+|   \---tests
+|           index.ts
+|           
++---hooks
+|       useAuth.tsx
+|       useCodeExecution.ts
+|       useEditor.ts
+|       useFileManager.ts
+|       useProgress.ts
+|       useProject.ts
+|       useStorage.ts
+|       useToolWorkspace.ts
+|       useWorkspaceSettings.ts
+|       
++---i18n
++---images
+|       logo.png
+|       
++---pages
+|   +---Admin
+|   |       AdminDashboard.css
+|   |       AdminDashboard.tsx
+|   |       AdminLogin.css
+|   |       AdminLogin.tsx
+|   |       ChapterManagement.tsx
+|   |       LessonManagement.tsx
+|   |       QuestionManagement.tsx
+|   |       TechnologyForm.tsx
+|   |       TechnologyManagement.tsx
+|   |       TestManagement.tsx
+|   |       
+|   +---Auth
+|   |       Auth.css
+|   |       Login.tsx
+|   |       Register.tsx
+|   |       VerifyOTP.tsx
+|   |       
+|   +---Home
+|   |       Home.css
+|   |       Home.tsx
+|   |       
+|   +---Learning
+|   |       Chapter.css
+|   |       Chapter.tsx
+|   |       LearningHome.css
+|   |       LearningHome.tsx
+|   |       LessonPage.tsx
+|   |       MySQLCompletion.tsx
+|   |       Technology.css
+|   |       Technology.tsx
+|   |       
+|   +---Practice
+|   |       PracticeHome.tsx
+|   |       PracticeTool.tsx
+|   |       
+|   +---Test
+|   |       ChapterTest.tsx
+|   |       FinalTest.tsx
+|   |       TestHome.tsx
+|   |       TestResult.tsx
+|   |       
+|   \---WorkingTools
+|           CPPTool.tsx
+|           CSSTool.tsx
+|           CTool.tsx
+|           HTMLTool.tsx
+|           JavaScriptTool.tsx
+|           JavaTool.tsx
+|           MySQLTool.tsx
+|           PythonTool.tsx
+|           ReactTool.tsx
+|           RunOutput.tsx
+|           SpringTool.tsx
+|           WorkingToolsHome.backup.tsx
+|           WorkingToolsHome.tsx
+|           
++---routes
+|       AppRoutes.tsx
+|       
++---services
+|   |   authService.ts
+|   |   chapterService.ts
+|   |   databaseService.ts
+|   |   deploymentService.ts
+|   |   diagnosticService.ts
+|   |   errorService.ts
+|   |   fileService.ts
+|   |   finalTestService.ts
+|   |   learningService.ts
+|   |   lessonService.ts
+|   |   otpService.ts
+|   |   progressService.ts
+|   |   projectService.ts
+|   |   questionService.ts
+|   |   securityService.ts
+|   |   shareService.ts
+|   |   springService.ts
+|   |   storageService.ts
+|   |   technologyService.ts
+|   |   testService.ts
+|   |   workspaceService.ts
+|   |   
+|   +---language
+|   |       completionService.ts
+|   |       formatterService.ts
+|   |       languageService.ts
+|   |       syntaxService.ts
+|   |       
+|   \---runner
+|           cppRunner.ts
+|           cRunner.ts
+|           cssRunner.ts
+|           htmlRunner.ts
+|           javaRunner.ts
+|           javascriptRunner.ts
+|           pythonRunner.ts
+|           reactRunner.ts
+|           runnerService.ts
+|           typescriptRunner.ts
+|           
++---setting
+|       accessibility.css
+|       animations.css
+|       i18n.ts
+|       languages.ts
+|       notificationService.ts
+|       Settings.css
+|       Settings.ts
+|       Settings1.tsx
+|       SettingsContext.tsx
+|       themes.css
+|       translations.ts
+|       useMDLJKey.ts
+|       useNotification.ts
+|       useSettings.ts
+|       
++---styles
+|       auth.css
+|       dashboard.css
+|       final-test.css
+|       global.css
+|       lesson.css
+|       responsive.css
+|       sidebar.css
+|       variables.css
+|       working-tools.css
+|       
++---types
+|       Auth.ts
+|       Chapter.ts
+|       FinalTest.ts
+|       LearningContent.ts
+|       Lesson.ts
+|       Practice.ts
+|       Progress.ts
+|       Project.ts
+|       Security.ts
+|       Technology.ts
+|       Test.ts
+|       User.ts
+|       WorkingTool.ts
+|       Workspace.ts
+|       WorkspaceFile.ts
+|       WorkspaceFolder.ts
+|       
+\---utils
+        constants.ts
+        encryption.ts
+        helpers.ts
+        security.ts
+        testEvaluator.ts
+        validation.ts
+        
+
+================= BACKEND SRC =================
+Folder PATH listing
+Volume serial number is 7AA6-B665
+C:\USERS\ADMIN\DESKTOP\DLTJ2.10\SERVER\SRC
+|   app.ts
+|   server.ts
+|   
++---config
+|       database.ts
+|       env.ts
+|       
++---controllers
+|       adminAuthController.ts
+|       authController.ts
+|       databaseController.ts
+|       deploymentController.ts
+|       diagnosticController.ts
+|       executionController.ts
+|       fileController.ts
+|       projectController.ts
+|       shareController.ts
+|       springController.ts
+|       workspaceController.ts
+|       
++---middleware
+|       authMiddleware.ts
+|       errorMiddleware.ts
+|       rateLimitMiddleware.ts
+|       validationMiddleware.ts
+|       
++---models
+|       Admin.ts
+|       DatabaseConnection.ts
+|       Project.ts
+|       User.ts
+|       UserProject.ts
+|       WorkspaceFile.ts
+|       WorkspaceFolder.ts
+|       
++---routes
+|       adminAuthRoutes.ts
+|       authRoutes.ts
+|       databaseRoutes.ts
+|       deploymentRoutes.ts
+|       diagnosticRoutes.ts
+|       executionRoutes.ts
+|       fileRoutes.ts
+|       projectRoutes.ts
+|       shareRoutes.ts
+|       springRoutes.ts
+|       workspaceRoutes.ts
+|       
++---runners
+|       cppRunner.ts
+|       cRunner.ts
+|       htmlRunner.ts
+|       javaRunner.ts
+|       javascriptRunner.ts
+|       mysqlRunner.ts
+|       pythonRunner.ts
+|       reactRunner.ts
+|       springRunner.ts
+|       typescriptRunner.ts
+|       
++---security
+|       commandSecurity.ts
+|       resourceLimits.ts
+|       sandbox.ts
+|       tokenSecurity.ts
+|       
++---services
+|       adminAuthService.ts
+|       authService.ts
+|       databaseService.ts
+|       deploymentService.ts
+|       diagnosticService.ts
+|       executionService.ts
+|       fileService.ts
+|       otpService.ts
+|       projectService.ts
+|       shareService.ts
+|       springService.ts
+|       workspaceService.ts
+|       
+\---utils
+        errors.ts
+        logger.ts
+        paths.ts
+        process.ts
+        

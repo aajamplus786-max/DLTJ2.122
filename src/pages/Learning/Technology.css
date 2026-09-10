@@ -1,0 +1,594 @@
+/* =====================================================
+   DLTJ2.1
+   LEARNING TECHNOLOGY PAGE
+   FILE: src/pages/Learning/Technology.css
+   ===================================================== */
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.dltj-app {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(255, 225, 70, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 35%,
+      rgba(244, 63, 94, 0.10),
+      transparent 30%
+    ),
+    #ffffff;
+  color: #171717;
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.dltj-page {
+  width: min(1380px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+/* =====================================================
+   PAGE HEADING
+   ===================================================== */
+
+.dltj-page-heading {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 34px;
+  padding: 38px 42px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.07),
+    0 0 45px rgba(255, 218, 45, 0.10),
+    0 0 55px rgba(244, 63, 94, 0.06);
+}
+
+/* =====================================================
+   HEADING GLOW
+   ===================================================== */
+
+.dltj-page-heading::before {
+  content: "";
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 215, 0, 0.18);
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+.dltj-page-heading::after {
+  content: "";
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  bottom: -120px;
+  left: -60px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 63, 94, 0.10);
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+.dltj-page-heading > * {
+  position: relative;
+  z-index: 1;
+}
+
+.dltj-page-heading > span {
+  display: inline-flex;
+
+  margin-bottom: 12px;
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: #fff7c2;
+  color: #8a6500;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dltj-page-heading h2 {
+  margin: 0;
+
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+
+  font-weight: 900;
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+}
+
+.dltj-page-heading p {
+  max-width: 700px;
+
+  margin: 14px 0 0;
+
+  color: #686868;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   PROGRESS SECTION
+   ===================================================== */
+
+.learning-progress-section {
+  margin-bottom: 42px;
+  padding: 30px 34px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.055),
+    0 0 35px rgba(255, 215, 0, 0.08);
+}
+
+.learning-progress-section .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 28px;
+  margin-bottom: 20px;
+}
+
+.learning-progress-section .section-heading > div {
+  min-width: 0;
+}
+
+.learning-progress-section .section-heading h2 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.learning-progress-section .section-heading p {
+  margin: 7px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.learning-progress-section .section-heading strong {
+  flex-shrink: 0;
+
+  font-size: 30px;
+  font-weight: 900;
+
+  color: #d39b00;
+}
+
+/* =====================================================
+   PROGRESS BAR AREA
+   ===================================================== */
+
+.learning-progress-section > *:last-child {
+  width: 100%;
+}
+
+/* =====================================================
+   LEARNING SECTION
+   ===================================================== */
+
+.learning-section {
+  margin-top: 42px;
+  padding: 34px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.055),
+    0 0 45px rgba(244, 63, 94, 0.045);
+}
+
+/* =====================================================
+   SECTION HEADING
+   ===================================================== */
+
+.learning-section .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+}
+
+.learning-section .section-heading > div {
+  min-width: 0;
+}
+
+.learning-section .section-heading h2 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.learning-section .section-heading p {
+  margin: 7px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.learning-section .section-heading > span {
+  flex-shrink: 0;
+
+  min-width: 70px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: #fff7c7;
+  color: #775900;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 850;
+}
+
+/* =====================================================
+   CHAPTER LIST SUPPORT
+   ===================================================== */
+
+.learning-section > *:not(.section-heading) {
+  width: 100%;
+}
+
+/*
+   ChapterList may render its own grid/list.
+   These selectors make common chapter containers
+   breathe without changing the TSX.
+*/
+
+.learning-section .learning-card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+/* =====================================================
+   CHAPTER CARD
+   ===================================================== */
+
+.learning-card {
+  position: relative;
+
+  min-height: 190px;
+
+  padding: 28px;
+
+  border: 1px solid rgba(20, 20, 20, 0.09);
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.055);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+
+  cursor: pointer;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(245, 194, 0, 0.45);
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.09),
+    0 0 30px rgba(255, 215, 0, 0.13);
+}
+
+.learning-card:focus-visible {
+  outline: 3px solid rgba(244, 63, 94, 0.25);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   CHAPTER NUMBER
+   ===================================================== */
+
+.learning-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 20px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe45c,
+      #ffc928
+    );
+
+  color: #493700;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 20px rgba(255, 200, 0, 0.20);
+}
+
+/* =====================================================
+   CARD CONTENT
+   ===================================================== */
+
+.learning-card-content h3 {
+  margin: 0;
+
+  color: #181818;
+
+  font-size: 19px;
+  line-height: 1.3;
+
+  font-weight: 850;
+}
+
+.learning-card-content p {
+  margin: 10px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =====================================================
+   TEST SECTION
+   ===================================================== */
+
+.tests-section {
+  margin-top: 44px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(255, 219, 57, 0.13),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+/* =====================================================
+   TEST LIST
+   ===================================================== */
+
+.test-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+/* =====================================================
+   TEST CARD GENERAL SUPPORT
+   ===================================================== */
+
+.test-list > * {
+  min-width: 0;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  margin-top: 24px;
+  padding: 0 22px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4c400,
+      #ffd83d
+    );
+
+  color: #352900;
+
+  font-size: 14px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(240, 190, 0, 0.22);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 32px rgba(240, 190, 0, 0.30);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .dltj-page {
+    width: min(100% - 32px, 700px);
+    padding: 30px 0 60px;
+  }
+
+  .dltj-page-heading {
+    padding: 30px;
+  }
+
+  .learning-progress-section,
+  .learning-section {
+    padding: 26px;
+  }
+
+  .learning-section .learning-card-grid,
+  .test-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .dltj-page {
+    width: calc(100% - 22px);
+    padding-top: 22px;
+  }
+
+  .dltj-page-heading {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .dltj-page-heading h2 {
+    font-size: 30px;
+  }
+
+  .dltj-page-heading p {
+    font-size: 14px;
+  }
+
+  .learning-progress-section,
+  .learning-section {
+    padding: 21px 18px;
+    border-radius: 21px;
+  }
+
+  .learning-progress-section .section-heading {
+    align-items: flex-start;
+  }
+
+  .learning-progress-section .section-heading strong {
+    font-size: 25px;
+  }
+
+  .learning-section .section-heading {
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .learning-section .section-heading h2 {
+    font-size: 22px;
+  }
+
+  .learning-card {
+    min-height: 170px;
+    padding: 23px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL DEVICES
+   ===================================================== */
+
+@media (max-width: 400px) {
+  .dltj-page {
+    width: calc(100% - 16px);
+  }
+
+  .dltj-page-heading {
+    padding: 21px 17px;
+  }
+
+  .learning-progress-section,
+  .learning-section {
+    padding: 18px 15px;
+  }
+
+  .learning-card {
+    padding: 20px;
+  }
+}

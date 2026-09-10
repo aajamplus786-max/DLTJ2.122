@@ -1,0 +1,371 @@
+/* =====================================================
+   DLTJ2.0
+   STEP 7.9
+   FILE: src/styles/final-test.css
+   ===================================================== */
+
+.final-test-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.final-test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 28px;
+  margin-bottom: 22px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.final-test-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #2563eb;
+}
+
+.final-test-header h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+.final-test-header p {
+  margin: 0;
+  max-width: 650px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   TIMER
+   ===================================================== */
+
+.test-timer {
+  min-width: 135px;
+  padding: 15px 20px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.test-timer.danger {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =====================================================
+   PROGRESS
+   ===================================================== */
+
+.test-progress {
+  margin-bottom: 22px;
+}
+
+.test-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.test-progress-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.test-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+/* =====================================================
+   QUESTION CARD
+   ===================================================== */
+
+.final-question-card {
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.final-question-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #64748b;
+}
+
+.final-question-top strong {
+  color: #2563eb;
+}
+
+.final-question-card h2 {
+  margin: 0 0 28px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   OPTIONS
+   ===================================================== */
+
+.final-options {
+  display: grid;
+  gap: 14px;
+}
+
+.final-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.final-option:hover {
+  border-color: #93c5fd;
+  background: #f8fbff;
+}
+
+.final-option.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.option-letter {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #f1f5f9;
+  font-weight: 800;
+}
+
+.final-option.selected
+.option-letter {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.final-test-navigation {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.final-test-navigation button,
+.result-actions button,
+.result-empty button {
+  border: none;
+  border-radius: 12px;
+  padding: 13px 22px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.final-test-navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.submit-test-button {
+  background: #16a34a !important;
+}
+
+/* =====================================================
+   RESULT
+   ===================================================== */
+
+.final-result-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.result-card {
+  text-align: center;
+  padding: 45px 30px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.result-card.passed {
+  border-color: #86efac;
+}
+
+.result-card.failed {
+  border-color: #fecaca;
+}
+
+.result-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.result-card.passed
+.result-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.result-card.failed
+.result-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.result-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.result-card h1 {
+  margin: 15px 0;
+  font-size: 64px;
+}
+
+.result-card h1 small {
+  font-size: 28px;
+  color: #64748b;
+}
+
+.result-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   RESULT STATS
+   ===================================================== */
+
+.result-stats {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.result-stat {
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.result-stat span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.result-stat strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+}
+
+/* =====================================================
+   RESULT ACTIONS
+   ===================================================== */
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.secondary-result-button {
+  background: #475569 !important;
+}
+
+.result-empty {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .final-test-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .test-timer {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .final-question-card {
+    padding: 20px;
+  }
+
+  .final-question-card h2 {
+    font-size: 18px;
+  }
+
+  .result-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .final-test-navigation {
+    flex-wrap: wrap;
+  }
+}

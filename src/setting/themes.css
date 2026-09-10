@@ -1,0 +1,62 @@
+/* =====================================================
+   DLTJ2.1
+   FILE: src/setting/themes.css
+   ROYAL THEME SYSTEM
+===================================================== */
+
+:root {
+  --app-bg: #fff8fc;
+  --app-text: #171327;
+
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --input-bg: #ffffff;
+
+  --border-color: rgba(124, 58, 237, 0.16);
+
+  --accent-color: #7c3aed;
+
+  --rose-glow: rgba(244, 63, 94, 0.18);
+  --yellow-glow: rgba(250, 204, 21, 0.18);
+}
+
+[data-theme="light"] {
+  --app-bg: #fff8fc;
+  --app-text: #171327;
+
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --input-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --app-bg: #0d0a16;
+  --app-text: #f8f5ff;
+
+  --card-bg: rgba(25, 19, 38, 0.94);
+  --input-bg: #171122;
+
+  --border-color: rgba(196, 181, 253, 0.18);
+
+  --rose-glow: rgba(244, 63, 94, 0.22);
+  --yellow-glow: rgba(250, 204, 21, 0.14);
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      var(--rose-glow),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      var(--yellow-glow),
+      transparent 28%
+    ),
+    var(--app-bg);
+
+  color: var(--app-text);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}

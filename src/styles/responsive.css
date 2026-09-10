@@ -1,0 +1,415 @@
+/* =====================================================
+   DLTJ2.1
+   RESPONSIVE SYSTEM
+   FILE: src/styles/responsive.css
+   DATE: 2026-08-31
+   ===================================================== */
+
+/* =====================================================
+   GLOBAL RESPONSIVE FOUNDATION
+   ===================================================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   MAIN LAYOUT
+   ===================================================== */
+
+.dltj-main-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  position: relative;
+
+  background: var(--bg-primary);
+}
+
+.dltj-main-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 1201px) {
+  .dltj-main-content {
+    padding-bottom: 30px;
+  }
+}
+
+/* =====================================================
+   LARGE TABLET / SMALL DESKTOP
+   ===================================================== */
+
+@media (max-width: 1200px) {
+  .dltj-main-content {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .dltj-main-content {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .dltj-main-layout {
+    min-height: 100vh;
+
+    display: block;
+  }
+
+  .dltj-main-content {
+    width: 100%;
+    min-height: calc(
+      100vh - var(--sidebar-mobile-height)
+    );
+
+    margin-left: 0;
+
+    padding-bottom:
+      calc(
+        var(--sidebar-mobile-height) +
+        var(--safe-bottom) +
+        20px
+      );
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+  .dltj-main-content {
+    padding-bottom:
+      calc(
+        var(--sidebar-mobile-height) +
+        var(--safe-bottom) +
+        16px
+      );
+  }
+}
+
+/* =====================================================
+   VERY SMALL DEVICES
+   ===================================================== */
+
+@media (max-width: 360px) {
+  :root {
+    --sidebar-mobile-height: 68px;
+  }
+
+  .dltj-main-content {
+    padding-bottom:
+      calc(
+        var(--sidebar-mobile-height) +
+        var(--safe-bottom) +
+        14px
+      );
+  }
+}
+
+/* =====================================================
+   COMMON PAGE WIDTH
+   ===================================================== */
+
+.learning-page,
+.home-page,
+.practice-page,
+.test-page,
+.working-tools-page,
+.settings-page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =====================================================
+   RESPONSIVE IMAGES
+   ===================================================== */
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   RESPONSIVE TEXT
+   ===================================================== */
+
+h1 {
+  font-size: clamp(
+    30px,
+    4vw,
+    54px
+  );
+}
+
+h2 {
+  font-size: clamp(
+    24px,
+    3vw,
+    38px
+  );
+}
+
+h3 {
+  font-size: clamp(
+    20px,
+    2.4vw,
+    30px
+  );
+}
+
+/* =====================================================
+   TABLET SPACING
+   ===================================================== */
+
+@media (max-width: 900px) {
+  .page-container,
+  .content-container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* =====================================================
+   MOBILE SPACING
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .page-container,
+  .content-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* =====================================================
+   MOBILE BUTTONS
+   ===================================================== */
+
+@media (max-width: 700px) {
+  button {
+    max-width: 100%;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 48px;
+  }
+}
+
+/* =====================================================
+   MOBILE GRID SYSTEM
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .grid,
+  .card-grid,
+  .technology-grid,
+  .learning-technology-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =====================================================
+   TABLET GRID SYSTEM
+   ===================================================== */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .grid,
+  .card-grid,
+  .technology-grid,
+  .learning-technology-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   FLEX RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .responsive-flex {
+    flex-direction: column;
+  }
+
+  .responsive-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* =====================================================
+   MOBILE HORIZONTAL OVERFLOW
+   ===================================================== */
+
+.horizontal-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =====================================================
+   MODAL RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .modal,
+  .dialog,
+  .file-dialog,
+  .delete-dialog-content,
+  .move-dialog-content {
+    width: calc(100% - 28px);
+    max-width: calc(100% - 28px);
+  }
+}
+
+/* =====================================================
+   FORM RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .form-row,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  input,
+  textarea,
+  select {
+    max-width: 100%;
+  }
+}
+
+/* =====================================================
+   CODE / EDITOR RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  pre,
+  code {
+    max-width: 100%;
+  }
+
+  .code-editor,
+  .editor-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* =====================================================
+   WORKING TOOL MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+  .working-tool {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .working-tool-main {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   HIDE DESKTOP ONLY ELEMENTS
+   ===================================================== */
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* =====================================================
+   SHOW MOBILE ONLY ELEMENTS
+   ===================================================== */
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* =====================================================
+   SAFE AREA
+   ===================================================== */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  @media (max-width: 700px) {
+    .dltj-main-content {
+      padding-bottom:
+        calc(
+          var(--sidebar-mobile-height) +
+          env(safe-area-inset-bottom) +
+          20px
+        );
+    }
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

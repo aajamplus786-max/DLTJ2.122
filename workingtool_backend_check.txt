@@ -1,0 +1,540 @@
+===== server\src\app.ts =====
+// =====================================================
+// DLTJ2.1
+// WORKING TOOL — BATCH 12 + 13
+// FILE: server/src/app.ts
+// DATE: 2026-08-31
+// =====================================================
+
+import express, {
+    type NextFunction,
+    type Request,
+    type Response,
+  } from "express";
+  
+  import executionRoutes from "./routes/executionRoutes";
+  import projectRoutes from "./routes/projectRoutes";
+  import databaseRoutes from "./routes/databaseRoutes";
+  import springRoutes from "./routes/springRoutes";
+  import workspaceRoutes from "./routes/workspaceRoutes";
+  
+  import { AppError } from "./utils/errors";
+  import logger from "./utils/logger";
+  
+  const app = express();
+  
+  // =====================================================
+  // BODY PARSERS
+  // =====================================================
+  
+  app.use(express.json({ limit: "1mb" }));
+  
+  app.use(
+    express.urlencoded({
+      extended: true,
+      limit: "1mb",
+    }),
+  );
+  
+  // =====================================================
+  // SECURITY HEADERS
+  // =====================================================
+  
+  app.use(
+    (
+      _request: Request,
+      response: Response,
+      next: NextFunction,
+    ) => {
+      response.setHeader(
+        "X-Content-Type-Options",
+        "nosniff",
+      );
+  
+      response.setHeader(
+        "X-Frame-Options",
+        "DENY",
+      );
+  
+      response.setHeader(
+        "Referrer-Policy",
+        "no-referrer",
+      );
+  
+      response.setHeader(
+        "X-XSS-Protection",
+        "0",
+      );
+  
+      next();
+    },
+  );
+  
+  // =====================================================
+  // HEALTH CHECK
+  // =====================================================
+  
+  app.get(
+    "/api/health",
+    (_request: Request, response: Response) => {
+      response.json({
+        success: true,
+        service: "DLTJ2.1 Working Tool",
+        status: "online",
+        timestamp: new Date().toISOString(),
+      });
+    },
+  );
+  
+  // =====================================================
+  // WORKING TOOL — EXECUTION
+  // =====================================================
+  
+  app.use(
+    "/api/execution",
+    executionRoutes,
+  );
+  
+  // =====================================================
+  // WORKING TOOL — PROJECT
+  // =====================================================
+  
+  app.use(
+    "/api/project",
+    projectRoutes,
+  );
+  
+  // =====================================================
+  // WORKING TOOL — DATABASE / MYSQL
+  // =====================================================
+  
+  app.use(
+    "/api/database",
+    databaseRoutes,
+  );
+  
+  // =====================================================
+  // WORKING TOOL — SPRING
+  // =====================================================
+  
+  app.use(
+    "/api/spring",
+    springRoutes,
+  );
+  
+  // =====================================================
+  // WORKING TOOL — WORKSPACE
+  // =====================================================
+  
+  app.use(
+    "/api/workspace",
+    workspaceRoutes,
+  );
+  
+  // =====================================================
+  // API 404 HANDLER
+  // =====================================================
+  
+  app.use(
+    (
+      _request: Request,
+      response: Response,
+    ) => {
+      response.status(404).json({
+        success: false,
+        error: "API route not found.",
+      });
+    },
+  );
+  
+  // =====================================================
+  // GLOBAL ERROR HANDLER
+  // =====================================================
+  
+  app.use(
+    (
+      error: unknown,
+      _request: Request,
+      response: Response,
+      _next: NextFunction,
+    ) => {
+      logger.error(
+        error instanceof Error
+          ? error.message
+          : "Unhandled server error.",
+      );
+  
+      if (error instanceof AppError) {
+        response.status(error.statusCode).json({
+          success: false,
+          error: error.message,
+          code: error.code,
+        });
+  
+        return;
+      }
+  
+      if (
+        error instanceof SyntaxError
+      ) {
+        response.status(400).json({
+          success: false,
+          error: "Invalid JSON request.",
+        });
+  
+        return;
+      }
+  
+      response.status(500).json({
+        success: false,
+        error: "Internal server error.",
+      });
+    },
+  );
+  
+  // =====================================================
+  // EXPORT
+  // =====================================================
+  
+  export default app;
+===== server\src\server.ts =====
+
+===== server\src\routes\executionRoutes.ts =====
+
+===== server\src\controllers\executionController.ts =====
+// =====================================================
+// DLTJ2.1
+// WORKING TOOL — BATCH 7
+// FILE: server/src/controllers/executionController.ts
+// DATE: 2026-08-31
+// =====================================================
+
+import type {
+    Request,
+    Response,
+  } from "express";
+  
+  import {
+    executeCode,
+    getSupportedExecutionLanguages,
+  } from "../services/executionService";
+  
+  export async function executeCodeController(
+    req: Request,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const {
+        language,
+        files,
+        entryFile,
+        options,
+      } = req.body ?? {};
+  
+      if (
+        typeof language !== "string"
+      ) {
+        res.status(400).json({
+          success: false,
+          error: "Language is required.",
+        });
+        return;
+      }
+  
+      if (!Array.isArray(files)) {
+        res.status(400).json({
+          success: false,
+          error: "Files must be an array.",
+        });
+        return;
+      }
+  
+      const result =
+        await executeCode({
+          language,
+          files,
+          entryFile,
+          options,
+        });
+  
+      res.status(
+        result.success ? 200 : 400,
+      ).json(result);
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : "Execution request failed.";
+  
+      res.status(500).json({
+        success: false,
+        error: message,
+      });
+    }
+  }
+  
+  export function supportedLanguagesController(
+    _req: Request,
+    res: Response,
+  ): void {
+    res.json({
+      success: true,
+      languages:
+        getSupportedExecutionLanguages(),
+    });
+  }
+===== server\src\services\executionService.ts =====
+// =====================================================
+// DLTJ2.1
+// WORKING TOOL — BATCH 7
+// FILE: server/src/services/executionService.ts
+// DATE: 2026-08-31
+// =====================================================
+
+export type ExecutionLanguage =
+  | "html"
+  | "javascript"
+  | "python"
+  | "c"
+  | "cpp"
+  | "java"
+  | "typescript"
+  | "react";
+
+export interface ExecutionFile {
+  name: string;
+  path?: string;
+  content: string;
+}
+
+export interface ExecutionRequest {
+  language: string;
+  files: ExecutionFile[];
+  entryFile?: string;
+  options?: Record<string, unknown>;
+}
+
+export interface ExecutionMessage {
+  type:
+    | "stdout"
+    | "stderr"
+    | "info";
+
+  message: string;
+
+  line?: number;
+}
+
+export interface ExecutionResult {
+  success: boolean;
+  language: string;
+  messages: ExecutionMessage[];
+  output?: string;
+  error?: string;
+  duration?: number;
+}
+
+import {
+  runHtml,
+} from "../runners/htmlRunner";
+
+import {
+  runJavaScript,
+} from "../runners/javascriptRunner";
+
+import {
+  runPython,
+} from "../runners/pythonRunner";
+
+import {
+  runC,
+} from "../runners/cRunner";
+
+import {
+  runCpp,
+} from "../runners/cppRunner";
+
+import {
+  runJava,
+} from "../runners/javaRunner";
+
+import {
+  runTypeScript,
+} from "../runners/typescriptRunner";
+
+import {
+  runReact,
+} from "../runners/reactRunner";
+
+type ExecutionHandler = (
+  request: ExecutionRequest,
+) => Promise<ExecutionResult>;
+
+const handlers: Record<
+  ExecutionLanguage,
+  ExecutionHandler
+> = {
+  html: runHtml,
+  javascript: runJavaScript,
+  python: runPython,
+  c: runC,
+  cpp: runCpp,
+  java: runJava,
+  typescript: runTypeScript,
+  react: runReact,
+};
+
+export function getSupportedExecutionLanguages(): string[] {
+  return Object.keys(handlers);
+}
+
+function normalizeLanguage(
+  language: string,
+): ExecutionLanguage | null {
+  const normalized =
+    language
+      .trim()
+      .toLowerCase();
+
+  if (
+    normalized in handlers
+  ) {
+    return normalized as ExecutionLanguage;
+  }
+
+  return null;
+}
+
+export async function executeCode(
+  request: ExecutionRequest,
+): Promise<ExecutionResult> {
+  const startedAt =
+    Date.now();
+
+  const language =
+    normalizeLanguage(
+      request.language,
+    );
+
+  if (!language) {
+    return {
+      success: false,
+      language: request.language,
+      messages: [
+        {
+          type: "stderr",
+          message:
+            `Unsupported execution language: ${request.language}`,
+        },
+      ],
+      error:
+        `Unsupported execution language: ${request.language}`,
+      duration:
+        Date.now() - startedAt,
+    };
+  }
+
+  if (!Array.isArray(request.files)) {
+    return {
+      success: false,
+      language,
+      messages: [
+        {
+          type: "stderr",
+          message:
+            "Execution files must be an array.",
+        },
+      ],
+      error:
+        "Execution files must be an array.",
+      duration:
+        Date.now() - startedAt,
+    };
+  }
+
+  try {
+    const result =
+      await handlers[language](
+        request,
+      );
+
+    return {
+      ...result,
+      duration:
+        result.duration ??
+        Date.now() - startedAt,
+    };
+  } catch (error) {
+    const message =
+      error instanceof Error
+        ? error.message
+        : "Execution failed.";
+
+    return {
+      success: false,
+      language,
+      messages: [
+        {
+          type: "stderr",
+          message,
+        },
+      ],
+      error: message,
+      duration:
+        Date.now() - startedAt,
+    };
+  }
+}
+===== server\src\runners\pythonRunner.ts =====
+// =====================================================
+// DLTJ2.1
+// WORKING TOOL — BATCH 7
+// FILE: server/src/runners/pythonRunner.ts
+// DATE: 2026-08-31
+// =====================================================
+
+import type {
+    ExecutionRequest,
+    ExecutionResult,
+  } from "../services/executionService";
+  
+  export async function runPython(
+    request: ExecutionRequest,
+  ): Promise<ExecutionResult> {
+    const file =
+      request.files.find(
+        (item) =>
+          item.name
+            .toLowerCase()
+            .endsWith(".py"),
+      );
+  
+    if (!file) {
+      return {
+        success: false,
+        language: "python",
+        messages: [
+          {
+            type: "stderr",
+            message:
+              "No Python file found.",
+          },
+        ],
+        error:
+          "No Python file found.",
+      };
+    }
+  
+    return {
+      success: true,
+      language: "python",
+      messages: [
+        {
+          type: "info",
+          message:
+            `Python source prepared for secure sandbox execution: ${file.name}.`,
+        },
+      ],
+      output: file.content,
+    };
+  }

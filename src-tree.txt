@@ -1,0 +1,260 @@
+Folder PATH listing
+Volume serial number is 9C9E-77ED
+C:\USERS\MY PC\DESKTOP\DLTJ2.1\SRC
+³   App.css
+³   App.tsx
+³   index.css
+³   main.tsx
+³   
+ÃÄÄÄassets
+³   ³   hero.png
+³   ³   react.svg
+³   ³   vite.svg
+³   ³   
+³   ÃÄÄÄicons
+³   ÀÄÄÄimages
+ÃÄÄÄcomponents
+³   ÃÄÄÄadmin
+³   ³       ChapterForm.tsx
+³   ³       LessonForm.tsx
+³   ³       QuestionForm.tsx
+³   ³       TechnologyForm.tsx
+³   ³       TechnologyList.tsx
+³   ³       TestQuestionForm.tsx
+³   ³       
+³   ÃÄÄÄauth
+³   ³       AdminGuard.tsx
+³   ³       AuthGuard.tsx
+³   ³       LoginForm.tsx
+³   ³       OTPVerification.tsx
+³   ³       RegisterForm.tsx
+³   ³       SecurityTimer.tsx
+³   ³       
+³   ÃÄÄÄcommon
+³   ³       Button.tsx
+³   ³       Card.tsx
+³   ³       Header.tsx
+³   ³       Loading.tsx
+³   ³       ProtectedRoute.tsx
+³   ³       Sidebar.tsx
+³   ³       
+³   ÃÄÄÄhome
+³   ³       CourseGrid.tsx
+³   ³       DeveloperTrain.tsx
+³   ³       HeroSection.tsx
+³   ³       ProgressCard.tsx
+³   ³       QuickActions.tsx
+³   ³       TechnologyCard.tsx
+³   ³       WorkingToolsCard.tsx
+³   ³       
+³   ÃÄÄÄlearning
+³   ³       ChapterCard.tsx
+³   ³       ChapterList.tsx
+³   ³       LessonContent.tsx
+³   ³       LessonHeader.tsx
+³   ³       LessonNavigation.tsx
+³   ³       LessonSection.tsx
+³   ³       ProgressBar.tsx
+³   ³       TechnologyCard.tsx
+³   ³       
+³   ÃÄÄÄpractice
+³   ³       PracticeButton.tsx
+³   ³       PracticeCard.tsx
+³   ³       PracticeEditor.tsx
+³   ³       
+³   ÃÄÄÄtest
+³   ³       QuestionCard.tsx
+³   ³       TestCard.tsx
+³   ³       TestProgress.tsx
+³   ³       TestResult.tsx
+³   ³       TestTimer.tsx
+³   ³       
+³   ÀÄÄÄworkingTools
+³           CodeEditor.tsx
+³           ConsolePanel.tsx
+³           DeleteDialog.tsx
+³           EditorTabs.tsx
+³           ErrorPanel.tsx
+³           FileDialog.tsx
+³           FileExplorer.tsx
+³           FileTree.tsx
+³           NewFileDialog.tsx
+³           NewFolderDialog.tsx
+³           OutputView.tsx
+³           RenameDialog.tsx
+³           RunOutput.tsx
+³           ToolBottomBar.tsx
+³           ToolLayout.tsx
+³           ToolMenu.tsx
+³           
+ÃÄÄÄdata
+³   ³   practice.ts
+³   ³   
+³   ÃÄÄÄchapters
+³   ³       cChapters.ts
+³   ³       cppChapters.ts
+³   ³       cssChapters.ts
+³   ³       htmlChapters.ts
+³   ³       index.ts
+³   ³       javaChapters.ts
+³   ³       javascriptChapters.ts
+³   ³       mysqlChapters.ts
+³   ³       pythonChapters.ts
+³   ³       reactChapters.ts
+³   ³       springChapters.ts
+³   ³       typescriptChapters.ts
+³   ³       
+³   ÃÄÄÄlessons
+³   ³       cLessons.ts
+³   ³       cppLessons.ts
+³   ³       cssLessons.ts
+³   ³       htmlLessons.ts
+³   ³       index.ts
+³   ³       javaLessons.ts
+³   ³       javascriptLessons.ts
+³   ³       mysqlLessons.ts
+³   ³       pythonLessons.ts
+³   ³       reactLessons.ts
+³   ³       springLessons.ts
+³   ³       typescriptLessons.ts
+³   ³       
+³   ÃÄÄÄpractice
+³   ³       htmlPractice.ts
+³   ³       
+³   ÃÄÄÄquestions
+³   ³       cppQuestions.ts
+³   ³       cQuestions.ts
+³   ³       cssQuestions.ts
+³   ³       htmlQuestions.ts
+³   ³       index.ts
+³   ³       javaQuestions.ts
+³   ³       javascriptQuestions.ts
+³   ³       mysqlQuestions.ts
+³   ³       pythonQuestions.ts
+³   ³       reactQuestions.ts
+³   ³       springQuestions.ts
+³   ³       typescriptQuestions.ts
+³   ³       
+³   ÃÄÄÄtechnologies
+³   ³       technologies.ts
+³   ³       technologyConfig.ts
+³   ³       
+³   ÀÄÄÄtests
+³           htmlFinalTest.ts
+³           index.ts
+³           mysqlFinalTest.ts
+³           
+ÃÄÄÄhooks
+³       useAuth.tsx
+³       useProgress.ts
+³       useStorage.ts
+³       useToolWorkspace.ts
+³       
+ÃÄÄÄpages
+³   ÃÄÄÄAdmin
+³   ³       AdminDashboard.css
+³   ³       AdminDashboard.tsx
+³   ³       AdminLogin.css
+³   ³       AdminLogin.tsx
+³   ³       ChapterManagement.tsx
+³   ³       LessonManagement.tsx
+³   ³       QuestionManagement.tsx
+³   ³       TechnologyForm.tsx
+³   ³       TechnologyManagement.tsx
+³   ³       TestManagement.tsx
+³   ³       
+³   ÃÄÄÄAuth
+³   ³       Auth.css
+³   ³       Login.tsx
+³   ³       Register.tsx
+³   ³       VerifyOTP.tsx
+³   ³       
+³   ÃÄÄÄHome
+³   ³       Home.css
+³   ³       Home.tsx
+³   ³       
+³   ÃÄÄÄLearning
+³   ³       Chapter.tsx
+³   ³       LearningHome.css
+³   ³       LearningHome.tsx
+³   ³       LessonPage.tsx
+³   ³       MySQLCompletion.tsx
+³   ³       Technology.tsx
+³   ³       
+³   ÃÄÄÄPractice
+³   ³       PracticeHome.tsx
+³   ³       PracticeTool.tsx
+³   ³       
+³   ÃÄÄÄSettings
+³   ³       Settings.tsx
+³   ³       
+³   ÃÄÄÄTest
+³   ³       ChapterTest.tsx
+³   ³       FinalTest.tsx
+³   ³       TestHome.tsx
+³   ³       TestResult.tsx
+³   ³       
+³   ÀÄÄÄWorkingTools
+³           CPPTool.tsx
+³           CSSTool.tsx
+³           CTool.tsx
+³           HTMLTool.tsx
+³           JavaScriptTool.tsx
+³           JavaTool.tsx
+³           MySQLTool.tsx
+³           PythonTool.tsx
+³           ReactTool.tsx
+³           RunOutput.tsx
+³           SpringTool.tsx
+³           WorkingToolsHome.tsx
+³           
+ÃÄÄÄroutes
+³       AppRoutes.tsx
+³       
+ÃÄÄÄservices
+³       authService.ts
+³       chapterService.ts
+³       finalTestService.ts
+³       learningService.ts
+³       lessonService.ts
+³       otpService.ts
+³       progressService.ts
+³       questionService.ts
+³       securityService.ts
+³       storageService.ts
+³       technologyService.ts
+³       testService.ts
+³       
+ÃÄÄÄstyles
+³       auth.css
+³       dashboard.css
+³       final-test.css
+³       global.css
+³       lesson.css
+³       responsive.css
+³       sidebar.css
+³       variables.css
+³       working-tools.css
+³       
+ÃÄÄÄtypes
+³       Auth.ts
+³       Chapter.ts
+³       FinalTest.ts
+³       LearningContent.ts
+³       Lesson.ts
+³       Practice.ts
+³       Progress.ts
+³       Security.ts
+³       Technology.ts
+³       Test.ts
+³       User.ts
+³       WorkingTool.ts
+³       
+ÀÄÄÄutils
+        constants.ts
+        encryption.ts
+        helpers.ts
+        security.ts
+        testEvaluator.ts
+        validation.ts
+        
