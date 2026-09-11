@@ -22,7 +22,8 @@ import {
 // =====================================================
 
 const API_BASE_URL =
-  "http://localhost:3000";
+  import.meta.env.VITE_API_URL ??
+  "http://localhost:3000/api";
 
 // =====================================================
 // ADMIN SESSION KEY
@@ -89,7 +90,7 @@ export default function AdminGuard({
       try {
         const response =
           await fetch(
-            `${API_BASE_URL}/api/admin/auth/status`,
+            `${API_BASE_URL}/admin/auth/status`,
             {
               method: "GET",
               headers: {

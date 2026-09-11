@@ -1,8 +1,9 @@
 
 // =====================================================
-// DLTJ2.2
+// DLTJ2.10
 // USER AUTH FRONTEND
 // FILE: src/hooks/useAuth.tsx
+// DATE: 11-09-2026
 // =====================================================
 
 import {
@@ -29,7 +30,7 @@ import type {
 
 const API_BASE =
   import.meta.env.VITE_API_URL ??
-  "http://localhost:3000";
+  "http://localhost:3000/api";
 
 // =====================================================
 // STORAGE KEYS
@@ -187,7 +188,7 @@ export function AuthProvider({
       try {
         const result =
           await apiRequest(
-            "/api/auth/status",
+            "/auth/status",
           );
 
         if (
@@ -228,7 +229,7 @@ export function AuthProvider({
       }
     }
 
-    restoreSession();
+    void restoreSession();
 
     return () => {
       mounted = false;
@@ -245,7 +246,7 @@ export function AuthProvider({
   ) {
     const result =
       await apiRequest(
-        "/api/auth/login",
+        "/auth/login",
         {
           method: "POST",
 
@@ -337,7 +338,7 @@ export function AuthProvider({
   ) {
     const result =
       await apiRequest(
-        "/api/auth/register",
+        "/auth/register",
         {
           method: "POST",
 
@@ -411,7 +412,7 @@ export function AuthProvider({
 
     const result =
       await apiRequest(
-        "/api/auth/verify-otp",
+        "/auth/verify-otp",
         {
           method: "POST",
 
@@ -498,7 +499,7 @@ export function AuthProvider({
 
     const result =
       await apiRequest(
-        "/api/auth/resend-otp",
+        "/auth/resend-otp",
         {
           method: "POST",
 
@@ -542,7 +543,7 @@ export function AuthProvider({
   async function logout() {
     try {
       await apiRequest(
-        "/api/auth/logout",
+        "/auth/logout",
         {
           method: "POST",
         },

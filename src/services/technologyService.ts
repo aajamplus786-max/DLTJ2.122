@@ -35,9 +35,8 @@ interface ApiResponse<T> {
 }
 
 const API_BASE_URL =
-  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  (import.meta.env.VITE_API_URL as string | undefined) ??
   "http://localhost:3000/api";
-
 async function request<T>(
   endpoint: string,
   options?: RequestInit,

@@ -1,7 +1,10 @@
+
 // =====================================================
-// DLTJ2.2
+// DLTJ2.10
 // HIDDEN ADMIN LOGIN
 // FILE: src/pages/Admin/AdminLogin.tsx
+// UPDATED: 2026-09-11
+// LOCATION: F:\DLTJ2.122\src\pages\Admin\AdminLogin.tsx
 // =====================================================
 
 import {
@@ -26,7 +29,8 @@ import {
 // =====================================================
 
 const API_BASE_URL =
-  "http://localhost:3000";
+  import.meta.env.VITE_API_URL ??
+  "http://localhost:3000/api";
 
 // =====================================================
 // ADMIN LOGIN
@@ -126,7 +130,7 @@ export default function AdminLogin() {
     try {
       const response =
         await fetch(
-          `${API_BASE_URL}/api/admin/auth/login`,
+          `${API_BASE_URL}/admin/auth/login`,
           {
             method: "POST",
 
@@ -252,7 +256,7 @@ export default function AdminLogin() {
               letterSpacing: "0.08em",
             }}
           >
-            DLTJ 2.2
+            DLTJ 2.10
           </small>
 
           <h1

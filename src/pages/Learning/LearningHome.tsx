@@ -3,7 +3,7 @@
 // DLTJ2.10
 // DYNAMIC LEARNING SYSTEM
 // FILE: src/pages/Learning/LearningHome.tsx
-// DATE: 2026-09-07
+// DATE: 2026-09-11
 // LOCATION: src/pages/Learning
 // =====================================================
 
@@ -45,7 +45,7 @@ interface Chapter {
 // =====================================================
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_URL ??
   "http://localhost:3000/api";
 
 // =====================================================
