@@ -30,7 +30,7 @@ export const env = {
     process.env.DB_USER ?? "root",
 
   databasePassword:
-    process.env.DB_PASSWORD ?? "",
+    process.env.DB_PASSWORD ?? "root",
 
   databaseName:
     process.env.DB_NAME ?? "dltj210",
